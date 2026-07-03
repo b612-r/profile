@@ -1,11 +1,11 @@
 @font-face{
     font-family: "Hakkou mincho";
-    src: url("../page1/fonts/HakkouMincho.ttf") format("truetype");
+    src: url("fonts/HakkouMincho.ttf") format("truetype");
 }
 
 @font-face{
     font-family: shippori-regu;
-    src: url("../page1/fonts/Shippori-MIncho/ShipporiMincho-Regular.ttf") format("truetype");
+    src: url("fonts/Shippori-MIncho/ShipporiMincho-Regular.ttf") format("truetype");
 }
 
 body{
