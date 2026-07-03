@@ -21,6 +21,22 @@ body{
     cursor: url("img/omamori.png") 0 0, auto;
 }
 
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:url("img/washi.png");
+    background-size:cover;
+    opacity:0.3;
+    pointer-events:none;
+    z-index:0;
+}
+
+body > *{
+    position:relative;
+    z-index:1;
+}
+
 a, .enter-btn{
     cursor: url("img/omamori.png") 0 0, pointer;
 }
@@ -40,10 +56,26 @@ a, .enter-btn{
     justify-content:center;
 }
 
+.divider span{
+    display:inline-block;
+    transition: all .3s ease;
+}
+
+.divider span:hover{
+    color:#fff;
+
+    transform: scale(1.15);
+
+    text-shadow:
+        0 0 6px rgba(255,63,111,.8),
+        0 0 12px rgba(255,63,111,.5),
+        0 0 25px rgba(255,63,111,.3);
+}
+
 .divider::before,
 .divider::after{
     content:"";
-    display:inline-block;
+    display:ainline-block;
     width:120px;
     height:1px;
     background:#ffffff99;
@@ -79,6 +111,8 @@ a, .enter-btn{
     transition: 0.3s;
     color: white;
     border-color: white;
+
+    box-shadow: 0 0 50px rgba(255,255,255,0.3);
 }
 
 .enter-btn:hover .corner{
