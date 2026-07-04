@@ -1,0 +1,16 @@
+/*フォント*/
+
+@font-face{
+    font-family: Oliver-regu;
+    src: url("/fonts/Oliver-Font/Oliver\ Font\ Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Hakkou mincho";
+    src: url("/fonts/HakkouMincho.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: shippori-regu;
+    src: url("/fonts/Shippori-MIncho/ShipporiMincho-Regular.ttf") format("truetype");
+}

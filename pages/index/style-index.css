@@ -1,12 +1,4 @@
-@font-face{
-    font-family: "Hakkou mincho";
-    src: url("fonts/HakkouMincho.ttf") format("truetype");
-}
 
-@font-face{
-    font-family: shippori-regu;
-    src: url("fonts/Shippori-MIncho/ShipporiMincho-Regular.ttf") format("truetype");
-}
 
 body{
     margin:0;
@@ -18,14 +10,13 @@ body{
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    cursor: url("img/omamori.png") 0 0, auto;
 }
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
-    background-image:url("img/washi.png");
+    background-image:url("../../img/washi.png");
     background-size:cover;
     opacity:0.3;
     pointer-events:none;
@@ -38,7 +29,7 @@ body > *{
 }
 
 a, .enter-btn{
-    cursor: url("img/omamori.png") 0 0, pointer;
+    cursor: url("../../img/omamori.png") 0 0, pointer;
 }
 
 .welcome{

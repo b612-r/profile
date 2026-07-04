@@ -1,0 +1,121 @@
+body{
+    margin:0;
+    background:#1b1a1a;
+    cursor: url("../../img/omamori.png") 0 0, auto;
+    color : #E2CDB5;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:url("../../img/washi.png");
+    background-size:cover;
+    opacity:0.3;
+    pointer-events:none;
+    z-index:0;
+}
+
+a{
+    cursor: url("../../img/omamori_big.png") 0 0, auto;
+}
+
+.container{
+    position:relative;
+    z-index:1;
+    display : grid;
+    min-height: 100vh;
+    grid-template-columns : 1fr 3fr 2fr;
+}
+
+.menu{
+    display : flex ;
+    flex-direction : column;
+    text-decoration:none;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    font-family : Oliver-regu;
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    text-decoration:none;
+    padding-bottom: 10px;
+    color : #E2CDB5;
+    letter-spacing:6px;
+    font-size:20px;
+    transition:
+        color .1s ease,
+        text-shadow .1s ease;
+    
+}
+
+.btn::after {
+    background-color: #f52f50; /* 下線の色 */
+    bottom: -4px; /* 要素の下端からの距離 */
+    content: ""; /* 要素に内容を追加 */
+    height: 2px; /* 下線の高さ */
+    left: 0; /* 要素の左端からの距離 */
+    position: absolute; /* 絶対位置指定 */
+    transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
+    transform-origin: center top; /* 変形の原点を中央上に指定 */
+    transition: transform .3s; /* 変形をアニメーション化 */
+    width: 100%; /* 要素の幅 */
+}
+
+
+.btn:hover{
+    color: #f52f50;
+    text-shadow:
+        0 0 5px rgba(245,47,80,.4),
+        0 0 20px rgba(245,47,80,.2);
+}
+
+.btn:hover::after {
+  transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+}
+
+.btn:active{
+    color:white;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.9),
+        0 0 18px rgba(255,255,255,.6);
+}
+
+.main-message{
+    font-family: shippori-regu;
+    font-size: 30px;
+}
+
+
+/*一旦ランダム部分のCSSこれ↓*/
+.content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.main-message{
+    color:#E2CDB5;
+    text-align:center;
+    letter-spacing:3px;
+    line-height:2.2;
+}
+
+/*テスト
+
+.menu{
+    background:red;
+}
+
+.content{
+    background:blue;
+}
+
+.image{
+    background:green;
+}
+    
+*/
