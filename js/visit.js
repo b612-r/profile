@@ -22,11 +22,8 @@ if(visitCount === 1){
     visitMessage = "もう道は覚えた？";
 }else if(visitCount < 100){
     visitMessage = "あんた、ほんとによく来るね。";
-}else if(visitCount === 100{
+}else{
     visitMessage = "……おかえり。";
-}
-else{
-    visitCount = "";
 }
 
 const visitMessageElement = document.getElementById("visit-message");
