@@ -3,6 +3,22 @@ body{
     background:#1b1a1a;
     cursor: url("../../img/omamori.png") 0 0, auto;
     color : #E2CDB5;
+
+    opacity:0;
+    transform:translateY(10px);
+    animation:fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 body::before{
     content:"";
@@ -24,7 +40,12 @@ a{
     z-index:1;
     display : grid;
     min-height: 100vh;
-    grid-template-columns : 1fr 3fr 2fr;
+    grid-template-columns : 220px 3fr 420px;
+
+    opacity:0;
+    transform:translateY(15px);
+    animation:fadeIn .8s ease forwards;
+    overflow: hidden;
 }
 
 .menu{
@@ -84,6 +105,18 @@ a{
         0 0 18px rgba(255,255,255,.6);
 }
 
+.secret-link{
+    display:none;
+}
+
+.secret-link.open{
+    display:inline-block;
+    color:#f52f50;
+    text-shadow:
+        0 0 6px rgba(245,47,80,.45),
+        0 0 18px rgba(245,47,80,.25);
+}
+
 .main-message{
     font-family: shippori-regu;
     font-size: 30px;
@@ -93,8 +126,12 @@ a{
 /*一旦ランダム部分のCSSこれ↓*/
 .content{
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
+    gap: 45px;
+    font-family: shippori-regu;
+    transform: translateY(-35px);
 }
 
 .main-message{
@@ -102,6 +139,230 @@ a{
     text-align:center;
     letter-spacing:3px;
     line-height:2.2;
+    transform: translateY(-10px);
+}
+
+.news-board{
+    width: 360px;
+    padding: 20px 32px;
+    border: 1px solid rgba(226,205,181,.45);
+    background: rgba(255,255,255,.02);
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.02);
+
+}
+
+.news-board h2{
+    text-align: center;
+    letter-spacing: 8px;
+    font-size: 20px;
+    margin: 0 0 24px;
+    font-family: "Hakkou mincho";
+    
+}
+.news-attention{
+    font-size: 12px;
+    text-align: center;
+}
+
+.news-item{
+    display:block;
+    text-decoration:none;
+    color:#E2CDB5;
+    border-bottom: 1px solid rgba(226,205,181,.25);
+    padding: 14px 0;
+}
+
+.news-item:hover{
+    transition: 0.3s;
+    color:#f52f50;
+}
+
+.news-more{
+    
+    display:block;
+    margin-top:16px;
+    text-align:right;
+    font-size:14px;
+    letter-spacing:3px;
+    color:#E2CDB5;
+    text-decoration:none;
+}
+
+.news-more:hover{
+    color:#f52f50;
+}
+
+.news-date{
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #E2CDB5;
+}
+
+.news-item p{
+    margin: 8px 0 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.new-mark{
+    margin-left:12px;
+    color:#f52f50;
+    font-size:12px;
+    letter-spacing:2px;
+}
+.menu,
+.content,
+.image{
+    opacity:0;
+    transform:translateY(15px);
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.5s;
+}
+
+.menu{
+    animation-delay:.1s;
+}
+
+.content{
+    animation-delay:.3s;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame{
+    width:380px;
+    height:480px;
+    border:1px solid rgba(226,205,181,.45);
+    position:relative;
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(2px);
+}
+
+.frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.corner{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.top-left{
+    top:-5px;
+    left: -5px;
+    border-top: 1px solid #E2CDB5;
+    border-left: 1px solid #E2CDB5;
+}
+
+.top-right{
+    top:-5px;
+    right: -5px;
+    border-top: 1px solid #E2CDB5;
+    border-right: 1px solid #E2CDB5;
+}
+
+.bottom-left{
+    bottom:-5px;
+    left: -5px;
+    border-bottom: 1px solid #E2CDB5;
+    border-left: 1px solid #E2CDB5;
+}
+
+.bottom-right{
+    bottom:-5px;
+    right: -5px;
+    border-bottom: 1px solid #E2CDB5;
+    border-right: 1px solid #E2CDB5;
+}
+
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.news-category{
+    margin-right:8px;
+    font-size:12px;
+    opacity:.8;
+}
+
+.category-filter{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:24px;
+}
+
+.category-filter button{
+    background:none;
+    border:1px solid rgba(226,205,181,.35);
+    color:#E2CDB5;
+    padding:6px 12px;
+    font-family: shippori-regu;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+
+.category-filter button:hover{
+    color:#f52f50;
+    border-color:#f52f50;
+}
+
+#visit-message{
+    margin-bottom: 24px;
+
+    font-family: shippori-regu;
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    color:rgba(226,205,181,.65);
+
+    text-align:center;
+
+    font-style:italic;
+}
+
+#visit-message{
+    opacity:0;
+
+    animation:visitFade 2s ease forwards;
+
+    animation-delay:.8s;
+}
+
+@keyframes visitFade{
+
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    to{
+        opacity:.65;
+        transform:translateY(0);
+    }
+
 }
 
 /*テスト

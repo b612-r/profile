@@ -4,12 +4,16 @@ body{
     margin:0;
     background:#1b1a1a;
     font-family: "Hakkou mincho";
-    color:#ffffff99;
+    color:#E2CDB5;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
+    opacity:1;
+    transition:opacity .4s ease;
+    
 }
 
 body::before{
@@ -27,6 +31,8 @@ body > *{
     position:relative;
     z-index:1;
 }
+
+
 
 a, .enter-btn{
     cursor: url("../../img/omamori.png") 0 0, pointer;
@@ -69,7 +75,7 @@ a, .enter-btn{
     display:ainline-block;
     width:120px;
     height:1px;
-    background:#ffffff99;
+    background:#E2CDB5;
 }
 
 .divider::before{
@@ -90,9 +96,9 @@ a, .enter-btn{
 .enter-btn{
     position:relative;
     display:inline-block;
-    color:#ffffff99;
+    color:#E2CDB5;
     text-decoration:none;
-    border:1px solid #ffffff99;
+    border:1px solid #E2CDB5;
     padding:15px 80px;
     margin-top: 40px;
     letter-spacing:10px;
@@ -120,27 +126,27 @@ a, .enter-btn{
 .top-left{
     top:-5px;
     left: -5px;
-    border-top: 1px solid #ffffff99;
-    border-left: 1px solid #ffffff99;
+    border-top: 1px solid #E2CDB5;
+    border-left: 1px solid #E2CDB5;
 }
 
 .top-right{
     top:-5px;
     right: -5px;
-    border-top: 1px solid#ffffff99;
-    border-right: 1px solid#ffffff99;
+    border-top: 1px solid#E2CDB5;
+    border-right: 1px solid#E2CDB5;
 }
 
 .bottom-left{
     bottom:-5px;
     left: -5px;
-    border-bottom: 1px solid #ffffff99;
-    border-left: 1px solid #ffffff99;
+    border-bottom: 1px solid #E2CDB5;
+    border-left: 1px solid #E2CDB5;
 }
 
 .bottom-right{
     bottom:-5px;
     right: -5px;
-    border-bottom: 1px solid #ffffff99;
-    border-right: 1px solid #ffffff99;
+    border-bottom: 1px solid #E2CDB5;
+    border-right: 1px solid #E2CDB5;
 }

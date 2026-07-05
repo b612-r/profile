@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style-home.css">
+    <link rel="stylesheet" href="../../../common.css">
+    <link rel="stylesheet" href="style-newsindex.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>近況</title>
+</head>
+<body>
+    <main class="container">
+        <nav class="menu">
+            <a href="../home.html" class="btn">Home</a>
+            <a href="#" class="btn">Profile</a>
+            <a href="#" class="btn">Gallery</a>
+            <a href="#" class="btn">Novel</a>
+            <a href="#" class="btn">Link</a>
+            <a href="#" class="btn">Memory</a>
+        </nav>
+
+        <section class="content">
+            <article class="news-detail">
+                <div class="category-filter">
+                    <button data-category="all">ALL</button>
+                    <button data-category="更新">更新</button>
+                    <button data-category="小説">小説</button>
+                    <button data-category="イラスト">イラスト</button>
+                    <button data-category="雑記">雑記</button>
+                </div>
+
+<div id="news-list"></div>
+                <div id="news-list"></div>
+                <a href="../home.html" class="news-more">HOMEへ戻る</a>
+            </article>
+        </section>
+
+        <aside class="image">
+            <div class="frame">
+                <span class="corner top-left"></span>
+                <span class="corner top-right"></span>
+                <span class="corner bottom-left"></span>
+                <span class="corner bottom-right"></span>
+            </div>
+        </aside>
+    </main>
+    <script src="../../../js/news.js"></script>
+</body>
+</html>

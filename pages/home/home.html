@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style-home.css">
-    <link rel="stylesheet" href="../../commoon.css">
+    <link rel="stylesheet" href="../../common.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
 </head>
@@ -12,25 +12,50 @@
     
 
     <nav class="menu"> 
-        <a href="#" class="btn Home-btn">Home</a>
+        <a href="/pages/home/home.html" class="btn Home-btn">Home</a>
         <a href="#" class="btn profile-btn">Profile</a>
         <a href="#" class="btn Gallery">Gallery</a>
         <a href="#" class="btn Novel">Novel</a>
         <a href="#" class="btn Link">Link</a>
         <a href="#" class="btn Memory">Memory</a>
+        <a href="../secret/secret.html" class="btn secret-link" id="secret-link">境界</a>
     </nav>
 
     <section class="content">
         <div class="main-message">
+
+            <p id="visit-message"></p>
+
             <p id="message-title"></p>
             <p id="message-text"></p>
         </div>
+
+        <div class="news-board">
+            <div class="news-list-box">
+                <h2>近況</h2>
+                <p class="news-attention">以前の記事は一覧よりご確認できます。</p>
+            </div>
+
+            <div id="home-news"></div>
+            
+
+            <a href="news/news-index.html" class="news-more">一覧</a>
+        </div>
+        
     </section>
 
     <aside class="image">
+        <div class="frame">
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+        </div>
     </aside>
 
     </main>
     <script src="../../js/message.js"></script>
+    <script src="../../js/news.js"></script>
+    <script src="../../js/visit.js"></script>
 </body>
 </html>
