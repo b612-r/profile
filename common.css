@@ -1,9 +1,6 @@
-/*フォント*/
-
 @font-face{
     font-family: Oliver-regu;
-    src: url("fonts/Oliver-Font/Oliver\ Font\ Regular.ttf") format("truetype");
-    
+    src: url("fonts/Oliver-Font/Oliver Font Regular.ttf") format("truetype");
 }
 
 @font-face{
