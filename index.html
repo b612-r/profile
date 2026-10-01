@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#14002e" />
+
   <title>♡ PROFILE ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -12,83 +20,218 @@
       --bg1:#090018;
       --bg2:#25005f;
       --bg3:#5a08c9;
+
       --cyan:#33f6ff;
       --pink:#ff73d1;
       --purple:#8d59ff;
       --yellow:#ffe95b;
+
       --ink:#1a0834;
       --panel:#c6a3ff;
       --panel2:#ff9ddd;
+
       --white:#fff7ff;
       --shadow:#16002e;
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;font-family:"DotGothic16",sans-serif}
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+      margin:0;
+      min-height:100%;
+      font-family:"DotGothic16","MS Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+    }
+
     body{
       color:var(--white);
       overflow-x:hidden;
+
       background:
-        radial-gradient(circle at 50% 5%, rgba(137,63,255,.35), transparent 28%),
-        linear-gradient(180deg,var(--bg1),var(--bg2) 58%,#31007c 100%);
+        radial-gradient(
+          circle at 50% 5%,
+          rgba(137,63,255,.35),
+          transparent 28%
+        ),
+        linear-gradient(
+          180deg,
+          var(--bg1),
+          var(--bg2) 58%,
+          #31007c 100%
+        );
     }
 
-    button,a{font:inherit}
-    button{cursor:pointer}
+    body *:not(svg):not(svg *){
+      font-family:"DotGothic16","MS Gothic","Hiragino Kaku Gothic ProN",sans-serif !important;
+    }
+
+    button,
+    input,
+    textarea,
+    select,
+    a{
+      font:inherit;
+    }
+
+    button{
+      cursor:pointer;
+    }
+
+
+    /* ========================================
+       DESKTOP
+    ======================================== */
+
     .desktop{
       min-height:100vh;
       position:relative;
-      padding:28px 24px 86px;
+
+      padding:
+        28px
+        24px
+        86px;
+
       overflow:hidden;
     }
 
-    .stars,.stars:before,.stars:after{
-      position:absolute; inset:0; pointer-events:none; content:"";
+
+    /* stars */
+
+    .stars,
+    .stars::before,
+    .stars::after{
+      position:absolute;
+      inset:0;
+
+      pointer-events:none;
+
+      content:"";
+
       background-image:
-        radial-gradient(circle,#fff 1px,transparent 1.5px),
-        radial-gradient(circle,#ff76da 1px,transparent 1.5px),
-        radial-gradient(circle,#40f8ff 1px,transparent 1.5px);
-      background-size:110px 110px,160px 160px,210px 210px;
-      background-position:15px 30px,70px 15px,30px 95px;
+        radial-gradient(
+          circle,
+          #fff 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle,
+          #ff76da 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle,
+          #40f8ff 1px,
+          transparent 1.5px
+        );
+
+      background-size:
+        110px 110px,
+        160px 160px,
+        210px 210px;
+
+      background-position:
+        15px 30px,
+        70px 15px,
+        30px 95px;
+
       opacity:.38;
     }
 
+
+    /* grid */
+
     .grid{
       position:absolute;
-      left:-10%; right:-10%; bottom:0; height:34vh;
-      transform:perspective(380px) rotateX(62deg);
+
+      left:-10%;
+      right:-10%;
+      bottom:0;
+
+      height:34vh;
+
+      transform:
+        perspective(380px)
+        rotateX(62deg);
+
       transform-origin:bottom;
+
       background-image:
-        linear-gradient(rgba(58,241,255,.58) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(58,241,255,.58) 1px, transparent 1px);
-      background-size:36px 28px;
-      mask-image:linear-gradient(to top,#000,transparent);
+        linear-gradient(
+          rgba(58,241,255,.58) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(58,241,255,.58) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        36px 28px;
+
+      mask-image:
+        linear-gradient(
+          to top,
+          #000,
+          transparent
+        );
+
       opacity:.75;
+
       pointer-events:none;
     }
+
+
+    /* ========================================
+       HERO
+    ======================================== */
 
     .hero{
       position:relative;
       z-index:2;
+
       text-align:center;
-      margin:8px auto 28px;
+
+      margin:
+        8px auto
+        28px;
+
       max-width:900px;
     }
 
     .tiny{
       font-size:12px;
+
       letter-spacing:.24em;
+
       color:#d6c5ff;
-      text-shadow:2px 2px 0 #230049;
+
+      text-shadow:
+        2px 2px 0 #230049;
     }
 
     .hero h1{
-      margin:6px 0 2px;
-      font-size:clamp(42px,9vw,96px);
+      margin:
+        6px 0
+        2px;
+
+      font-size:
+        clamp(
+          42px,
+          9vw,
+          96px
+        );
+
       line-height:.9;
+
       font-style:italic;
+
       letter-spacing:-.07em;
+
       color:#fff;
+
       text-shadow:
         0 3px 0 #22efff,
         0 7px 0 #de61ef,
@@ -97,474 +240,899 @@
 
     .subtitle{
       margin-top:12px;
+
       color:#b9fbff;
-      font-size:clamp(12px,2.6vw,18px);
+
+      font-size:
+        clamp(
+          12px,
+          2.6vw,
+          18px
+        );
+
       letter-spacing:.14em;
     }
+
+
+    /* ========================================
+       DESKTOP ICONS
+    ======================================== */
 
     .desktop-icons{
       position:relative;
       z-index:3;
-      width:min(860px,100%);
-      margin:34px auto 0;
+
+      width:
+        min(
+          860px,
+          100%
+        );
+
+      margin:
+        34px auto
+        0;
+
       display:grid;
-      grid-template-columns:repeat(3,minmax(110px,1fr));
-      gap:24px 18px;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(
+            110px,
+            1fr
+          )
+        );
+
+      gap:
+        24px
+        18px;
     }
 
     .icon{
       appearance:none;
+
       border:0;
+
       background:transparent;
+
       color:#fff;
+
       min-height:120px;
+
       display:flex;
+
       flex-direction:column;
+
       align-items:center;
+
       justify-content:flex-start;
+
       gap:8px;
-      text-shadow:2px 2px 0 #26005a;
-      transition:.13s ease;
+
+      text-shadow:
+        2px 2px 0 #26005a;
+
+      transition:
+        .13s ease;
     }
 
-    .icon:hover,.icon:focus-visible{transform:translateY(-4px) scale(1.02)}
+    .icon:hover,
+    .icon:focus-visible{
+      transform:
+        translateY(-4px)
+        scale(1.02);
+    }
+
     .pixel{
-      width:78px;height:78px;
-      border:4px solid #180033;
+      width:78px;
+      height:78px;
+
+      border:
+        4px solid
+        #180033;
+
       box-shadow:
         5px 5px 0 #0a001b,
-        inset 0 0 0 3px rgba(255,255,255,.45);
+        inset
+        0 0 0 3px
+        rgba(255,255,255,.45);
+
       display:grid;
+
       place-items:center;
+
       position:relative;
+
       background:#c7adff;
+
       image-rendering:pixelated;
+
       overflow:hidden;
     }
 
     .pixel-art svg{
       width:62px;
       height:62px;
+
       shape-rendering:crispEdges;
+
       image-rendering:pixelated;
-      filter:drop-shadow(2px 2px 0 rgba(23,0,47,.55));
+
+      filter:
+        drop-shadow(
+          2px
+          2px
+          0
+          rgba(23,0,47,.55)
+        );
     }
 
-    .icon:nth-child(1) .pixel{background:#6befff}
-    .icon:nth-child(2) .pixel{background:#ff9ad8}
-    .icon:nth-child(3) .pixel{background:#ffc8ec}
-    .icon:nth-child(4) .pixel{background:#83ffe0}
-    .icon:nth-child(5) .pixel{background:#b494ff}
-    .icon:nth-child(6) .pixel{background:#8ef4ff}
+    .icon:nth-child(1) .pixel{
+      background:#6befff;
+    }
+
+    .icon:nth-child(2) .pixel{
+      background:#ff9ad8;
+    }
+
+    .icon:nth-child(3) .pixel{
+      background:#ffc8ec;
+    }
+
+    .icon:nth-child(4) .pixel{
+      background:#83ffe0;
+    }
+
+    .icon:nth-child(5) .pixel{
+      background:#b494ff;
+    }
+
+    .icon:nth-child(6) .pixel{
+      background:#8ef4ff;
+    }
 
     .pixel::after{
       content:"";
+
       position:absolute;
-      width:8px;height:8px;
-      background:rgba(255,255,255,.75);
-      transform:translate(-28px,-28px);
-      box-shadow:8px 0 0 rgba(255,255,255,.22);
+
+      width:8px;
+      height:8px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          .75
+        );
+
+      transform:
+        translate(
+          -28px,
+          -28px
+        );
+
+      box-shadow:
+        8px 0 0
+        rgba(
+          255,
+          255,
+          255,
+          .22
+        );
+
       pointer-events:none;
     }
+
     .label{
-      padding:3px 7px;
+      padding:
+        3px
+        7px;
+
       font-size:13px;
-      background:rgba(17,0,43,.72);
-      border:1px solid rgba(255,255,255,.35);
+
+      background:
+        rgba(
+          17,
+          0,
+          43,
+          .72
+        );
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .35
+        );
     }
+
+
+    /* ========================================
+       WINDOWS
+    ======================================== */
 
     .window{
       position:fixed;
+
       z-index:20;
-      width:min(520px,calc(100vw - 22px));
-      max-height:min(70vh,650px);
-      left:50%; top:50%;
-      transform:translate(-50%,-50%);
+
+      width:
+        min(
+          520px,
+          calc(
+            100vw - 22px
+          )
+        );
+
+      max-height:
+        min(
+          70vh,
+          650px
+        );
+
+      left:50%;
+      top:50%;
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        );
+
       background:#efe3ff;
+
       color:var(--ink);
-      border:4px solid #180033;
-      box-shadow:8px 8px 0 #0a001b;
+
+      border:
+        4px solid
+        #180033;
+
+      box-shadow:
+        8px
+        8px
+        0
+        #0a001b;
+
       display:none;
     }
-    .window.open{display:block}
-    .window.active{z-index:60}
+
+    .window.open{
+      display:block;
+
+      animation:
+        windowPop
+        .34s
+        steps(6,end);
+
+      transform-origin:
+        50% 40%;
+    }
+
+    .window.active{
+      z-index:60;
+    }
+
+    @keyframes windowPop{
+
+      0%{
+        opacity:0;
+
+        scale:.82;
+
+        translate:
+          0
+          12px;
+      }
+
+      35%{
+        opacity:1;
+
+        scale:1.05;
+
+        translate:
+          0
+          -4px;
+      }
+
+      70%{
+        scale:.98;
+
+        translate:
+          0
+          2px;
+      }
+
+      100%{
+        opacity:1;
+
+        scale:1;
+
+        translate:
+          0
+          0;
+      }
+    }
+
+
+    /* titlebar */
 
     .titlebar{
       user-select:none;
+
       touch-action:none;
+
       display:flex;
+
       align-items:center;
-      justify-content:space-between;
+
+      justify-content:
+        space-between;
+
       min-height:38px;
-      padding:5px 7px 5px 11px;
+
+      padding:
+        5px
+        7px
+        5px
+        11px;
+
       color:#17002f;
+
       font-weight:700;
-      background:linear-gradient(90deg,#38f1ff,#ad78ff,#ff83cf);
-      border-bottom:4px solid #180033;
+
+      background:
+        linear-gradient(
+          90deg,
+          #38f1ff,
+          #ad78ff,
+          #ff83cf
+        );
+
+      border-bottom:
+        4px solid
+        #180033;
+
       cursor:grab;
     }
-    .titlebar:active{cursor:grabbing}
-    .winbuttons{display:flex;gap:5px}
-    .winbtn{
-      width:25px;height:24px;padding:0;
-      border:3px solid #180033;
-      background:#ffd6f1;
-      color:#180033;
-      line-height:16px;
-      font-weight:900;
-      box-shadow:2px 2px 0 #180033;
+
+    .titlebar:active{
+      cursor:grabbing;
     }
+
+    .winbuttons{
+      display:flex;
+      gap:5px;
+    }
+
+    .winbtn{
+      width:25px;
+      height:24px;
+
+      padding:0;
+
+      border:
+        3px solid
+        #180033;
+
+      background:#ffd6f1;
+
+      color:#180033;
+
+      line-height:16px;
+
+      font-weight:900;
+
+      box-shadow:
+        2px
+        2px
+        0
+        #180033;
+    }
+
+    .winbtn.close{
+      background:#ff91cf;
+
+      color:#17002f;
+
+      touch-action:
+        manipulation;
+
+      -webkit-tap-highlight-color:
+        transparent;
+
+      position:relative;
+
+      z-index:3;
+    }
+
+    .winbtn.close:active{
+      transform:
+        translate(
+          2px,
+          2px
+        );
+
+      box-shadow:none;
+    }
+
+
+    /* window content */
 
     .content{
       overflow:auto;
-      max-height:calc(70vh - 42px);
+
+      max-height:
+        calc(
+          70vh - 42px
+        );
+
       padding:22px;
+
       background:
-        linear-gradient(rgba(255,255,255,.52),rgba(255,255,255,.52)),
-        repeating-linear-gradient(0deg,transparent 0 23px,rgba(69,37,115,.09) 24px);
+        linear-gradient(
+          rgba(
+            255,
+            255,
+            255,
+            .52
+          ),
+          rgba(
+            255,
+            255,
+            255,
+            .52
+          )
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent
+          0 23px,
+          rgba(
+            69,
+            37,
+            115,
+            .09
+          )
+          24px
+        );
+
       line-height:1.75;
+
+      line-break:strict;
+
+      word-break:normal;
+
+      overflow-wrap:
+        break-word;
     }
 
     .content h2{
-      margin:0 0 16px;
+      margin:
+        0 0
+        16px;
+
       font-size:20px;
+
       color:#5b1f95;
     }
-    .content p{margin:.4em 0}
-    .content ul{padding-left:1.2em}
+
+    .content p{
+      margin:.4em 0;
+    }
+
+    .content ul{
+      padding-left:1.2em;
+    }
+
     .note{
       margin-top:15px;
-      padding:10px 12px;
+
+      padding:
+        10px
+        12px;
+
       background:#fff7cc;
-      border:3px solid #180033;
-      box-shadow:3px 3px 0 #180033;
+
+      border:
+        3px solid
+        #180033;
+
+      box-shadow:
+        3px
+        3px
+        0
+        #180033;
     }
 
     .tag{
       display:inline-block;
-      margin:3px 3px 3px 0;
-      padding:3px 8px;
+
+      margin:
+        3px
+        3px
+        3px
+        0;
+
+      padding:
+        3px
+        8px;
+
       background:#ffd4ef;
-      border:2px solid #180033;
-      box-shadow:2px 2px 0 #180033;
+
+      border:
+        2px solid
+        #180033;
+
+      box-shadow:
+        2px
+        2px
+        0
+        #180033;
+
       font-size:12px;
     }
 
+
+    /* ========================================
+       LINKS
+    ======================================== */
+
     .linkbtn{
       display:block;
+
       width:100%;
-      margin:8px 0;
-      padding:10px 12px;
+
+      margin:
+        8px 0;
+
+      padding:
+        12px
+        12px;
+
       background:#a8f5ff;
+
       color:#180033;
-      border:3px solid #180033;
-      box-shadow:4px 4px 0 #180033;
+
+      border:
+        3px solid
+        #180033;
+
+      box-shadow:
+        4px
+        4px
+        0
+        #180033;
+
       text-align:center;
+
       font-weight:700;
+
       text-decoration:none;
+
+      position:relative;
+
+      z-index:5;
+
+      cursor:pointer;
+
+      touch-action:manipulation;
+
+      -webkit-tap-highlight-color:
+        rgba(
+          255,
+          255,
+          255,
+          .25
+        );
+
+      user-select:none;
     }
+
+    .linkbtn:active{
+      transform:
+        translate(
+          2px,
+          2px
+        );
+
+      box-shadow:
+        2px
+        2px
+        0
+        #180033;
+    }
+
+
+    /* ========================================
+       MUSIC PLAYER
+    ======================================== */
 
     .player{
       position:fixed;
+
       z-index:80;
-      right:14px;
+
+      right:10px;
+
       bottom:54px;
-      width:min(330px,calc(100vw - 28px));
+
+      width:292px;
+
       background:#f0dfff;
+
       color:#17002f;
-      border:4px solid #180033;
-      box-shadow:6px 6px 0 #090019;
+
+      border:
+        4px solid
+        #180033;
+
+      box-shadow:
+        6px
+        6px
+        0
+        #090019;
     }
 
     .player-head{
-      padding:7px 10px;
-      background:linear-gradient(90deg,#ff80cc,#7f6cff,#47efff);
-      border-bottom:4px solid #180033;
+      padding:
+        7px
+        10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ff80cc,
+          #7f6cff,
+          #47efff
+        );
+
+      border-bottom:
+        4px solid
+        #180033;
+
       font-weight:700;
-      display:flex;justify-content:space-between;align-items:center;
+
+      display:flex;
+
+      justify-content:
+        space-between;
+
+      align-items:center;
     }
 
-    .player-body{padding:12px}
-    .screen{
+    .player-body{
       padding:10px;
+    }
+
+    .screen{
+      padding:8px;
+
       background:#16002e;
+
       color:#79fbff;
-      border:3px solid #180033;
-      box-shadow:inset 0 0 0 2px #53268c;
+
+      border:
+        3px solid
+        #180033;
+
+      box-shadow:
+        inset
+        0 0 0 2px
+        #53268c;
+
       margin-bottom:10px;
+
       min-height:58px;
     }
 
     .song{
       font-size:12px;
+
       color:#ff9fe2;
+
       white-space:nowrap;
+
       overflow:hidden;
+
       text-overflow:ellipsis;
     }
 
-    .controls{display:flex;gap:7px;justify-content:center}
-    .controls button{
-      min-width:48px;
-      height:36px;
-      border:3px solid #180033;
-      background:#74efff;
-      box-shadow:3px 3px 0 #180033;
-      font-weight:900;
-    }
-
-    .taskbar{
-      position:fixed;
-      z-index:100;
-      left:0;right:0;bottom:0;
-      min-height:40px;
+    .controls{
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      padding:6px 10px;
-      color:#17002f;
-      background:linear-gradient(90deg,#8d59ff,#ff8dd5,#52ebff);
-      border-top:4px solid #180033;
+
+      gap:7px;
+
+      justify-content:center;
     }
 
-    .start{
-      padding:5px 11px;
-      border:3px solid #180033;
-      background:#c8ff78;
-      box-shadow:3px 3px 0 #180033;
+    .controls button{
+      min-width:44px;
+
+      height:36px;
+
+      border:
+        3px solid
+        #180033;
+
+      background:#74efff;
+
+      box-shadow:
+        3px
+        3px
+        0
+        #180033;
+
       font-weight:900;
     }
-    .status{font-size:12px;font-weight:700}
+
+
+    /* youtube */
 
     #yt-holder{
       position:fixed;
-      width:1px;height:1px;
+
+      width:1px;
+      height:1px;
+
       opacity:.01;
+
       pointer-events:none;
-      left:-9999px;top:-9999px;
+
+      left:-9999px;
+      top:-9999px;
+    }
+
+    #yt-fallback-holder{
+      position:fixed;
+
+      left:-10000px;
+      top:-10000px;
+
+      width:320px;
+      height:180px;
+
+      opacity:.01;
+
+      pointer-events:none;
+
+      overflow:hidden;
+    }
+
+    #yt-fallback-holder iframe{
+      width:320px;
+      height:180px;
+
+      border:0;
     }
 
 
+    /* ========================================
+       FLOATING DECOR
+    ======================================== */
+
     .decor-layer{
       position:absolute;
+
       inset:0;
+
       pointer-events:none;
+
       z-index:1;
+
       overflow:hidden;
     }
 
     .sticker{
       position:absolute;
+
       display:grid;
+
       place-items:center;
-      min-width:56px;
-      min-height:56px;
-      padding:8px 10px;
-      border:4px solid #180033;
-      box-shadow:4px 4px 0 #0a001b;
-      font-weight:900;
-      line-height:1;
-      text-shadow:2px 2px 0 rgba(23,0,47,.35);
+
       image-rendering:pixelated;
-    }
 
+      animation:
+        pixelFloat
+        4.8s
+        ease-in-out
+        infinite;
 
-
-    .sticker.devil,
-    .sticker.skate{
-      background:#ffd4ef;
-      color:#17002f;
-      font-size:28px;
-    }
-
-    .float1{left:4%; top:13%; transform:rotate(-8deg);}
-    .float2{right:8%; top:15%; transform:rotate(10deg);}
-    .float3{left:10%; top:54%; transform:rotate(-12deg);}
-    .float4{right:12%; top:44%; transform:rotate(8deg);}
-    .float5{left:19%; top:74%; transform:rotate(4deg);}
-    .float6{right:22%; top:74%; transform:rotate(-9deg);}
-    .float7{left:38%; top:19%; transform:rotate(7deg);}
-    .float8{right:34%; top:24%; transform:rotate(-7deg);}
-    .float9{left:29%; top:83%; transform:rotate(-5deg);}
-    .float10{right:4%; top:63%; transform:rotate(9deg);}
-
-
-
-    /* ===== EXTRA PIXEL DECOR + FLOATING ===== */
-    .sticker{
-      image-rendering:pixelated;
-      border-radius:0 !important;
-      animation:pixelFloat 4.8s ease-in-out infinite;
       will-change:transform;
     }
 
-    .sticker:nth-child(2){animation-delay:-1.2s;animation-duration:5.6s}
-    .sticker:nth-child(3){animation-delay:-2.1s;animation-duration:4.3s}
-    .sticker:nth-child(4){animation-delay:-.8s;animation-duration:5.1s}
-    .sticker:nth-child(5){animation-delay:-1.9s;animation-duration:4.7s}
-    .sticker:nth-child(6){animation-delay:-2.8s;animation-duration:5.9s}
-    .sticker:nth-child(7){animation-delay:-1.5s;animation-duration:4.5s}
-    .sticker:nth-child(8){animation-delay:-2.4s;animation-duration:5.2s}
-    .sticker:nth-child(9){animation-delay:-.4s;animation-duration:4.9s}
-    .sticker:nth-child(10){animation-delay:-3.1s;animation-duration:5.7s}
+    .sticker:nth-child(2){
+      animation-delay:-1.2s;
+      animation-duration:5.6s;
+    }
+
+    .sticker:nth-child(3){
+      animation-delay:-2.1s;
+      animation-duration:4.3s;
+    }
+
+    .sticker:nth-child(4){
+      animation-delay:-.8s;
+      animation-duration:5.1s;
+    }
+
+    .sticker:nth-child(5){
+      animation-delay:-1.9s;
+      animation-duration:4.7s;
+    }
+
+    .sticker:nth-child(6){
+      animation-delay:-2.8s;
+      animation-duration:5.9s;
+    }
+
+    .sticker:nth-child(7){
+      animation-delay:-1.5s;
+      animation-duration:4.5s;
+    }
+
+    .sticker:nth-child(8){
+      animation-delay:-2.4s;
+      animation-duration:5.2s;
+    }
+
+    .sticker:nth-child(9){
+      animation-delay:-.4s;
+      animation-duration:4.9s;
+    }
+
+    .sticker:nth-child(10){
+      animation-delay:-3.1s;
+      animation-duration:5.7s;
+    }
 
     @keyframes pixelFloat{
-      0%,100%{translate:0 0}
-      25%{translate:0 -8px}
-      50%{translate:5px -12px}
-      75%{translate:-4px -5px}
+
+      0%,
+      100%{
+        translate:
+          0 0;
+      }
+
+      25%{
+        translate:
+          0 -8px;
+      }
+
+      50%{
+        translate:
+          5px -12px;
+      }
+
+      75%{
+        translate:
+          -4px -5px;
+      }
     }
 
-    .sticker.star,
-    .sticker.heart,
-    .sticker.cursor,
-    .sticker.devil,
-    .sticker.skate{
-      box-shadow:
-        4px 4px 0 #0a001b,
-        inset 0 0 0 3px rgba(255,255,255,.32);
-    }
-
-
-
-
-
-    .sticker.star,
-    .sticker.heart,
-    .sticker.cursor,
-    .sticker.folder,
-    .sticker.cassette,
-    .sticker.cd{
-      font-size:0;
-      display:grid;
-      place-items:center;
-      padding:6px;
-    }
-
-    .sticker.star svg,
-    .sticker.heart svg,
-    .sticker.cursor svg,
-    .sticker.folder svg,
-    .sticker.cassette svg,
-    .sticker.cd svg{
-      width:42px;
-      height:42px;
-      shape-rendering:crispEdges;
-      image-rendering:pixelated;
-      filter:drop-shadow(2px 2px 0 rgba(23,0,47,.45));
-    }
-
-    .sticker.star{
-      min-width:62px;
-      min-height:62px;
-      background:#fff48c;
-    }
-
-    .sticker.heart{
-      min-width:62px;
-      min-height:62px;
-      background:#ff9ad8;
-    }
-
-    .sticker.cursor{
-      min-width:62px;
-      min-height:62px;
-      background:#8ef4ff;
-    }
-
-    .sticker.folder{
-      min-width:82px;
-      min-height:58px;
-      background:#86ffe4;
-    }
-
-    .sticker.cassette{
-      min-width:92px;
-      min-height:58px;
-      background:#b895ff;
-      padding:4px 6px;
-    }
-
-    .sticker.cassette svg{
-      width:74px;
-      height:40px;
-    }
-
-    .sticker.cd{
-      min-width:66px;
-      min-height:66px;
-      background:#d7c5ff;
-      padding:5px;
-    }
-
-    .sticker.cd svg{
-      width:48px;
-      height:48px;
-    }
-
-
-    .sticker.skate,
-    .sticker.devil{
-      font-size:0;
-      padding:6px;
-      background:#ffd4ef;
-      display:grid;
-      place-items:center;
-    }
-
-    .sticker.skate svg,
-    .sticker.devil svg{
-      width:42px;
-      height:42px;
-      shape-rendering:crispEdges;
-      image-rendering:pixelated;
-      filter:drop-shadow(2px 2px 0 rgba(23,0,47,.45));
-    }
-
-    .sticker.skate{
-      min-width:62px;
-      min-height:62px;
-      background:#b8f7ff;
-    }
-
-    .sticker.devil{
-      min-width:62px;
-      min-height:62px;
-      background:#ffb3df;
-    }
-
-
-
-    .sticker.star::before,
-    .sticker.heart::before,
-    .sticker.cursor::before,
-    .sticker.folder::before,
-    .sticker.cassette::before,
-    .sticker.cd::before,
-    .sticker.devil::before,
-    .sticker.skate::before{
-      content:"";
-      position:absolute;
-      inset:6px;
-      border:2px dashed rgba(24,0,51,.25);
-      pointer-events:none;
-    }
-
-
-
-    /* ===== V8: FLOATING DECOR = ICON ONLY ===== */
     .decor-layer .sticker{
       min-width:0 !important;
       min-height:0 !important;
+
       padding:0 !important;
+
       border:0 !important;
+
       border-radius:0 !important;
+
       box-shadow:none !important;
+
       background:transparent !important;
+
       clip-path:none !important;
+
       text-shadow:none !important;
+
       overflow:visible !important;
+
       filter:none !important;
     }
 
@@ -576,205 +1144,350 @@
 
     .decor-layer .sticker svg{
       display:block;
+
       width:100% !important;
       height:100% !important;
+
       overflow:visible;
+
       shape-rendering:crispEdges;
+
       image-rendering:pixelated;
+
       filter:
-        drop-shadow(2px 0 0 rgba(10,0,27,.75))
-        drop-shadow(-2px 0 0 rgba(10,0,27,.75))
-        drop-shadow(0 2px 0 rgba(10,0,27,.75))
-        drop-shadow(0 -2px 0 rgba(10,0,27,.75))
-        drop-shadow(3px 3px 0 rgba(10,0,27,.6)) !important;
+        drop-shadow(
+          2px 0 0
+          rgba(10,0,27,.75)
+        )
+        drop-shadow(
+          -2px 0 0
+          rgba(10,0,27,.75)
+        )
+        drop-shadow(
+          0 2px 0
+          rgba(10,0,27,.75)
+        )
+        drop-shadow(
+          0 -2px 0
+          rgba(10,0,27,.75)
+        )
+        drop-shadow(
+          3px 3px 0
+          rgba(10,0,27,.6)
+        ) !important;
     }
 
-    .decor-layer .star{width:46px !important;height:46px !important}
-    .decor-layer .heart{width:46px !important;height:46px !important}
-    .decor-layer .cursor{width:42px !important;height:42px !important}
-    .decor-layer .folder{width:68px !important;height:46px !important}
-    .decor-layer .cassette{width:82px !important;height:48px !important}
-    .decor-layer .cd{width:52px !important;height:52px !important}
-    .decor-layer .skate{width:56px !important;height:56px !important}
-    .decor-layer .devil{width:52px !important;height:52px !important}
+    .decor-layer .star{
+      width:46px !important;
+      height:46px !important;
+    }
+
+    .decor-layer .heart{
+      width:46px !important;
+      height:46px !important;
+    }
+
+    .decor-layer .cursor{
+      width:42px !important;
+      height:42px !important;
+    }
+
+    .decor-layer .folder{
+      width:68px !important;
+      height:46px !important;
+    }
+
+    .decor-layer .cassette{
+      width:82px !important;
+      height:48px !important;
+    }
+
+    .decor-layer .cd{
+      width:52px !important;
+      height:52px !important;
+    }
+
+    .decor-layer .skate{
+      width:56px !important;
+      height:56px !important;
+    }
+
+    .decor-layer .devil{
+      width:52px !important;
+      height:52px !important;
+    }
 
 
-    /* Cursor sparkle trail */
+    .float1{
+      left:4%;
+      top:13%;
+
+      transform:
+        rotate(-8deg);
+    }
+
+    .float2{
+      right:8%;
+      top:15%;
+
+      transform:
+        rotate(10deg);
+    }
+
+    .float3{
+      left:10%;
+      top:54%;
+
+      transform:
+        rotate(-12deg);
+    }
+
+    .float4{
+      right:12%;
+      top:44%;
+
+      transform:
+        rotate(8deg);
+    }
+
+    .float5{
+      left:19%;
+      top:74%;
+
+      transform:
+        rotate(4deg);
+    }
+
+    .float6{
+      right:22%;
+      top:74%;
+
+      transform:
+        rotate(-9deg);
+    }
+
+    .float7{
+      left:38%;
+      top:19%;
+
+      transform:
+        rotate(7deg);
+    }
+
+    .float8{
+      right:34%;
+      top:24%;
+
+      transform:
+        rotate(-7deg);
+    }
+
+    .float9{
+      left:29%;
+      top:83%;
+
+      transform:
+        rotate(-5deg);
+    }
+
+    .float10{
+      right:4%;
+      top:63%;
+
+      transform:
+        rotate(9deg);
+    }
+
+
+    /* ========================================
+       CURSOR SPARKLE
+    ======================================== */
+
     .sparkle{
       position:fixed;
+
       z-index:9999;
+
       width:8px;
       height:8px;
+
       pointer-events:none;
+
       background:#fff48c;
+
       box-shadow:
         8px 0 0 #ff8dd5,
         0 8px 0 #52ebff,
         8px 8px 0 #ffffff;
-      transform:translate(-50%,-50%) rotate(45deg) scale(1);
-      animation:sparkleFade .65s steps(4,end) forwards;
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        )
+        rotate(45deg)
+        scale(1);
+
+      animation:
+        sparkleFade
+        .65s
+        steps(4,end)
+        forwards;
+
       image-rendering:pixelated;
     }
 
     .sparkle.small{
-      width:5px;height:5px;
+      width:5px;
+      height:5px;
+
       box-shadow:
         5px 0 0 #ffffff,
         0 5px 0 #ff8dd5,
         5px 5px 0 #52ebff;
+
       animation-duration:.5s;
     }
 
     @keyframes sparkleFade{
-      0%{opacity:1;transform:translate(-50%,-50%) rotate(45deg) scale(1)}
-      50%{opacity:.8;transform:translate(-50%,-65%) rotate(90deg) scale(.8)}
-      100%{opacity:0;transform:translate(-50%,-100%) rotate(135deg) scale(.15)}
+
+      0%{
+        opacity:1;
+
+        transform:
+          translate(
+            -50%,
+            -50%
+          )
+          rotate(45deg)
+          scale(1);
+      }
+
+      50%{
+        opacity:.8;
+
+        transform:
+          translate(
+            -50%,
+            -65%
+          )
+          rotate(90deg)
+          scale(.8);
+      }
+
+      100%{
+        opacity:0;
+
+        transform:
+          translate(
+            -50%,
+            -100%
+          )
+          rotate(135deg)
+          scale(.15);
+      }
     }
 
-    @media (prefers-reduced-motion: reduce){
-      .sticker{animation:none}
-      .sparkle{display:none}
-    }
 
+    /* ========================================
+       TASK BAR
+    ======================================== */
 
     .taskbar{
-      gap:10px;
-    }
+      position:fixed;
 
-    .task-left{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      min-width:0;
-      flex:1 1 auto;
-    }
+      z-index:100;
 
-    .task-windows{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      min-width:0;
-      overflow-x:auto;
-      padding-bottom:2px;
-      scrollbar-width:thin;
-    }
+      left:0;
+      right:0;
+      bottom:0;
 
-    .task-windows::-webkit-scrollbar{
-      height:6px;
-    }
-
-    .task-windows::-webkit-scrollbar-thumb{
-      background:rgba(24,0,51,.35);
-    }
-
-    .task-btn{
-      flex:0 0 auto;
-      min-width:110px;
-      max-width:170px;
-      padding:5px 10px;
-      border:3px solid #180033;
-      background:#f6eaff;
-      color:#17002f;
-      box-shadow:3px 3px 0 #180033;
-      font-size:12px;
-      font-weight:700;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .task-btn.active{
-      background:#c8ff78;
-      transform:translateY(-1px);
-    }
-
-    .task-right{
-      flex:0 0 auto;
-      font-size:12px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    @media(max-width:680px){
-      .taskbar{
-        gap:6px;
-        align-items:flex-start;
-        padding:6px 8px;
-      }
-
-      .task-left{
-        gap:6px;
-      }
-
-      .task-btn{
-        min-width:92px;
-        max-width:120px;
-        font-size:11px;
-        padding:4px 8px;
-      }
-
-      .task-right{
-        font-size:11px;
-      }
-    }
-
-
-    @media(max-width:680px){
-      .desktop{padding:20px 12px 110px}
-      .desktop-icons{grid-template-columns:repeat(2,minmax(120px,1fr));gap:18px 8px}
-      .pixel{width:68px;height:68px}.pixel-art svg{width:54px;height:54px}
-      .window{
-        width:calc(100vw - 16px);
-        max-height:68vh;
-      }
-      .titlebar{cursor:default}
-      .player{
-        left:8px;right:8px;bottom:49px;
-        width:auto;
-      }
-      .content{padding:18px}
-      .sticker{
-        transform:scale(.82) !important;
-        opacity:.88;
-      }
-      .float1{left:2%; top:17%}
-      .float2{right:2%; top:16%}
-      .float3{left:0%; top:62%}
-      .float4{right:0%; top:50%}
-      .float5{left:8%; top:80%}
-      .float6{right:8%; top:78%}
-      .float7{left:44%; top:13%}
-      .float8{right:27%; top:29%}
-      .float9{left:20%; top:88%}
-      .float10{right:2%; top:68%}
-    }
-  
-    /* ===== V10 MOBILE TASKBAR FIX ===== */
-    .taskbar{
-      display:grid !important;
-      grid-template-columns:auto minmax(0,1fr) auto;
-      grid-template-areas:"start tabs status";
-      align-items:center;
-      gap:8px;
-      padding:6px 10px calc(6px + env(safe-area-inset-bottom));
       min-height:52px;
+
+      display:grid !important;
+
+      grid-template-columns:
+        auto
+        minmax(0,1fr)
+        auto;
+
+      grid-template-areas:
+        "start tabs status";
+
+      align-items:center;
+
+      gap:8px;
+
+      padding:
+        6px
+        10px
+        calc(
+          6px +
+          env(
+            safe-area-inset-bottom
+          )
+        );
+
+      color:#17002f;
+
+      background:
+        linear-gradient(
+          90deg,
+          #8d59ff,
+          #ff8dd5,
+          #52ebff
+        );
+
+      border-top:
+        4px solid
+        #180033;
     }
 
     .start{
       grid-area:start;
+
+      padding:
+        5px
+        11px;
+
+      border:
+        3px solid
+        #180033;
+
+      background:#c8ff78;
+
+      box-shadow:
+        3px
+        3px
+        0
+        #180033;
+
+      font-weight:900;
     }
 
     .task-windows{
       grid-area:tabs;
+
       width:100%;
+
       min-width:0;
+
       display:flex;
+
       gap:6px;
+
       overflow-x:auto;
       overflow-y:hidden;
-      -webkit-overflow-scrolling:touch;
+
+      -webkit-overflow-scrolling:
+        touch;
+
       scrollbar-width:none;
-      padding:2px 3px 5px;
+
+      padding:
+        2px
+        3px
+        5px;
     }
 
     .task-windows::-webkit-scrollbar{
@@ -783,278 +1496,460 @@
 
     .task-btn{
       min-width:118px;
+
       max-width:160px;
-      flex:0 0 auto;
+
+      flex:
+        0 0 auto;
+
+      padding:
+        5px
+        10px;
+
+      border:
+        3px solid
+        #180033;
+
+      background:#f6eaff;
+
+      color:#17002f;
+
+      box-shadow:
+        3px
+        3px
+        0
+        #180033;
+
+      font-size:12px;
+
+      font-weight:700;
+
+      white-space:nowrap;
+
+      overflow:hidden;
+
+      text-overflow:ellipsis;
+
+      animation:
+        taskTabIn
+        .24s
+        steps(4,end);
+
+      transform-origin:
+        left center;
+    }
+
+    .task-btn.active{
+      background:#c8ff78;
+
+      animation:
+        taskTabIn
+        .24s
+        steps(4,end),
+        activePulse
+        .28s
+        ease-out;
+    }
+
+    @keyframes taskTabIn{
+
+      0%{
+        opacity:0;
+
+        transform:
+          translateY(8px)
+          scaleX(.72);
+      }
+
+      55%{
+        opacity:1;
+
+        transform:
+          translateY(-2px)
+          scaleX(1.04);
+      }
+
+      100%{
+        opacity:1;
+
+        transform:
+          translateY(0)
+          scaleX(1);
+      }
+    }
+
+    @keyframes activePulse{
+
+      0%{
+        filter:
+          brightness(1);
+      }
+
+      45%{
+        filter:
+          brightness(1.35);
+      }
+
+      100%{
+        filter:
+          brightness(1);
+      }
     }
 
     .task-right{
       grid-area:status;
+
       justify-self:end;
+
+      flex:
+        0 0 auto;
+
+      font-size:12px;
+
+      font-weight:700;
+
+      white-space:nowrap;
     }
 
-    .winbtn.close{
-      background:#ff91cf;
-      color:#17002f;
-      touch-action:manipulation;
-      -webkit-tap-highlight-color:transparent;
-      position:relative;
-      z-index:3;
+
+    /* ========================================
+       CLOSE ALL
+    ======================================== */
+
+    .window.closing{
+      pointer-events:none;
+
+      animation:
+        windowCloseAll
+        .30s
+        steps(6,end)
+        forwards !important;
+
+      animation-delay:
+        var(
+          --close-delay,
+          0ms
+        ) !important;
+
+      transform-origin:
+        50% 100%;
     }
 
-    .winbtn.close:active{
-      transform:translate(2px,2px);
-      box-shadow:none;
+    @keyframes windowCloseAll{
+
+      0%{
+        opacity:1;
+
+        scale:1;
+
+        translate:
+          0 0;
+      }
+
+      35%{
+        opacity:1;
+
+        scale:1.025;
+
+        translate:
+          0 -3px;
+      }
+
+      100%{
+        opacity:0;
+
+        scale:.78;
+
+        translate:
+          0 46px;
+      }
     }
+
+    .start.closing-all{
+      animation:
+        closeAllButton
+        .34s
+        steps(5,end);
+    }
+
+    @keyframes closeAllButton{
+
+      0%{
+        transform:
+          translateY(0);
+
+        filter:
+          brightness(1);
+      }
+
+      30%{
+        transform:
+          translateY(2px);
+
+        filter:
+          brightness(1.35);
+      }
+
+      65%{
+        transform:
+          translateY(-2px);
+
+        filter:
+          brightness(1.15);
+      }
+
+      100%{
+        transform:
+          translateY(0);
+
+        filter:
+          brightness(1);
+      }
+    }
+
+    .taskbar.closing-all .task-btn{
+      animation:
+        taskTabOut
+        .24s
+        steps(4,end)
+        forwards !important;
+    }
+
+    @keyframes taskTabOut{
+
+      0%{
+        opacity:1;
+
+        transform:
+          translateY(0)
+          scaleX(1);
+      }
+
+      100%{
+        opacity:0;
+
+        transform:
+          translateY(8px)
+          scaleX(.65);
+      }
+    }
+
+
+    /* ========================================
+       SMART LINE BREAK
+    ======================================== */
+
+    .sp-br{
+      display:none;
+    }
+
+    .no-break{
+      white-space:nowrap;
+    }
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media(max-width:680px){
+
       .desktop{
-        padding-bottom:205px;
+        padding:
+          20px
+          12px
+          220px !important;
       }
 
-      .taskbar{
-        grid-template-columns:auto minmax(0,1fr);
-        grid-template-areas:
-          "start status"
-          "tabs tabs";
-        row-gap:7px;
-        column-gap:8px;
-        padding:6px 8px calc(7px + env(safe-area-inset-bottom));
-        min-height:94px;
-        border-radius:0;
+      .desktop-icons{
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(
+              120px,
+              1fr
+            )
+          );
+
+        gap:
+          18px
+          8px;
       }
 
-      .start{
-        min-width:94px;
-        padding:6px 10px;
-        font-size:15px;
+      .pixel{
+        width:68px;
+        height:68px;
       }
 
-      .task-right{
-        width:100%;
-        text-align:right;
-        font-size:11px;
-        overflow:hidden;
-        text-overflow:ellipsis;
+      .pixel-art svg{
+        width:54px;
+        height:54px;
       }
 
-      .task-windows{
-        width:100%;
-        padding:1px 2px 4px;
-        gap:6px;
-      }
 
-      .task-btn{
-        min-width:0;
-        width:auto;
-        max-width:none;
-        flex:1 0 104px;
-        padding:5px 8px;
-        font-size:10px;
-      }
-
-      .player{
-        bottom:calc(101px + env(safe-area-inset-bottom)) !important;
-      }
+      /* windows */
 
       .window{
-        max-height:calc(100vh - 205px);
+        left:8px !important;
+
+        right:auto !important;
+
+        top:8px !important;
+
+        bottom:auto !important;
+
+        width:
+          calc(
+            100vw - 16px
+          ) !important;
+
+        height:
+          calc(
+            100dvh - 205px
+          ) !important;
+
+        max-height:
+          calc(
+            100dvh - 205px
+          ) !important;
+
+        transform:none !important;
+
+        animation:
+          windowPopMobile
+          .32s
+          steps(5,end);
+      }
+
+      @keyframes windowPopMobile{
+
+        0%{
+          opacity:0;
+
+          scale:.9;
+
+          translate:
+            0 16px;
+        }
+
+        45%{
+          opacity:1;
+
+          scale:1.025;
+
+          translate:
+            0 -3px;
+        }
+
+        100%{
+          opacity:1;
+
+          scale:1;
+
+          translate:
+            0 0;
+        }
+      }
+
+      .titlebar{
+        cursor:default;
       }
 
       .content{
-        max-height:calc(100vh - 250px);
+        max-height:
+          calc(
+            100dvh - 250px
+          ) !important;
+
+        padding-left:14px !important;
+
+        padding-right:14px !important;
+
+        overscroll-behavior:
+          contain;
+      }
+
+      .content ul{
+        padding-left:1.45em;
       }
 
       .winbtn{
         width:32px;
         height:30px;
+
         font-size:20px;
+
         line-height:20px;
       }
-    }
 
-  
-    /* ===== V11 WINDOW / TAB OPEN ANIMATION ===== */
-    .window.open{
-      animation:windowPop .34s steps(6,end);
-      transform-origin:50% 40%;
-    }
 
-    @keyframes windowPop{
-      0%{
-        opacity:0;
-        scale:.82;
-        translate:0 12px;
-      }
-      35%{
-        opacity:1;
-        scale:1.05;
-        translate:0 -4px;
-      }
-      70%{
-        scale:.98;
-        translate:0 2px;
-      }
-      100%{
-        opacity:1;
-        scale:1;
-        translate:0 0;
-      }
-    }
+      /* mobile line break */
 
-    .task-btn{
-      animation:taskTabIn .24s steps(4,end);
-      transform-origin:left center;
-    }
-
-    @keyframes taskTabIn{
-      0%{
-        opacity:0;
-        transform:translateY(8px) scaleX(.72);
-      }
-      55%{
-        opacity:1;
-        transform:translateY(-2px) scaleX(1.04);
-      }
-      100%{
-        opacity:1;
-        transform:translateY(0) scaleX(1);
-      }
-    }
-
-    .task-btn.active{
-      animation:taskTabIn .24s steps(4,end), activePulse .28s ease-out;
-    }
-
-    @keyframes activePulse{
-      0%{filter:brightness(1)}
-      45%{filter:brightness(1.35)}
-      100%{filter:brightness(1)}
-    }
-
-    @media(max-width:680px){
-      .window.open{
-        animation:windowPopMobile .32s steps(5,end);
+      .sp-br{
+        display:block;
       }
 
-      @keyframes windowPopMobile{
-        0%{
-          opacity:0;
-          scale:.9;
-          translate:0 16px;
-        }
-        45%{
-          opacity:1;
-          scale:1.025;
-          translate:0 -3px;
-        }
-        100%{
-          opacity:1;
-          scale:1;
-          translate:0 0;
-        }
-      }
-    }
 
-    @media (prefers-reduced-motion: reduce){
-      .window.open,
-      .task-btn,
-      .task-btn.active{
-        animation:none !important;
-      }
-    }
+      /* player */
 
-  
-    /* ===== V17 CLOSE ALL ANIMATION ===== */
-    .window.closing{
-      pointer-events:none;
-      animation:windowCloseAll .30s steps(6,end) forwards !important;
-      animation-delay:var(--close-delay, 0ms) !important;
-      transform-origin:50% 100%;
-    }
-
-    @keyframes windowCloseAll{
-      0%{
-        opacity:1;
-        scale:1;
-        translate:0 0;
-      }
-      35%{
-        opacity:1;
-        scale:1.025;
-        translate:0 -3px;
-      }
-      100%{
-        opacity:0;
-        scale:.78;
-        translate:0 46px;
-      }
-    }
-
-    .start.closing-all{
-      animation:closeAllButton .34s steps(5,end);
-    }
-
-    @keyframes closeAllButton{
-      0%{transform:translateY(0);filter:brightness(1)}
-      30%{transform:translateY(2px);filter:brightness(1.35)}
-      65%{transform:translateY(-2px);filter:brightness(1.15)}
-      100%{transform:translateY(0);filter:brightness(1)}
-    }
-
-    .taskbar.closing-all .task-btn{
-      animation:taskTabOut .24s steps(4,end) forwards !important;
-    }
-
-    @keyframes taskTabOut{
-      0%{
-        opacity:1;
-        transform:translateY(0) scaleX(1);
-      }
-      100%{
-        opacity:0;
-        transform:translateY(8px) scaleX(.65);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .window.closing,
-      .start.closing-all,
-      .taskbar.closing-all .task-btn{
-        animation:none !important;
-      }
-    }
-
-  
-    /* ===== V24 MOBILE PLAYER / WINDOW COLLISION FIX ===== */
-    @media(max-width:680px){
-      /* プレイヤーをスマホでは横長のコンパクト表示に */
       .player{
         left:8px !important;
+
         right:8px !important;
-        bottom:calc(102px + env(safe-area-inset-bottom)) !important;
+
+        bottom:
+          calc(
+            102px +
+            env(
+              safe-area-inset-bottom
+            )
+          ) !important;
+
         width:auto !important;
       }
 
       .player-head{
-        padding:4px 8px;
+        padding:
+          4px
+          8px;
+
         font-size:10px;
-        border-bottom-width:3px;
+
+        border-bottom-width:
+          3px;
       }
 
       .player-body{
-        padding:6px 7px;
+        padding:
+          6px
+          7px;
+
         display:grid;
-        grid-template-columns:minmax(0,1fr) auto;
+
+        grid-template-columns:
+          minmax(0,1fr)
+          auto;
+
         align-items:center;
+
         gap:7px;
       }
 
       .screen{
         margin:0;
+
         min-height:0;
-        padding:6px 8px;
+
+        padding:
+          6px
+          8px;
+
         border-width:2px;
-        box-shadow:inset 0 0 0 1px #53268c;
+
+        box-shadow:
+          inset
+          0 0 0 1px
+          #53268c;
       }
 
       .screen > div:first-child{
@@ -1071,920 +1966,3449 @@
 
       .controls button{
         min-width:34px;
+
         width:34px;
+
         height:30px;
+
         padding:0;
+
         border-width:2px;
-        box-shadow:2px 2px 0 #180033;
+
+        box-shadow:
+          2px
+          2px
+          0
+          #180033;
+
         font-size:12px;
       }
 
-      /* 開いたウィンドウがプレイヤー・下部タスクバーの裏へ潜らないようにする */
-      .window{
-        left:8px !important;
-        right:auto !important;
-        top:8px !important;
-        bottom:auto !important;
-        width:calc(100vw - 16px) !important;
-        height:calc(100dvh - 205px) !important;
-        max-height:calc(100dvh - 205px) !important;
-        transform:none !important;
+
+      /* taskbar */
+
+      .taskbar{
+        grid-template-columns:
+          auto
+          minmax(0,1fr);
+
+        grid-template-areas:
+          "start status"
+          "tabs tabs";
+
+        row-gap:7px;
+
+        column-gap:8px;
+
+        padding:
+          6px
+          8px
+          calc(
+            7px +
+            env(
+              safe-area-inset-bottom
+            )
+          );
+
+        min-height:94px;
       }
 
-      .content{
-        max-height:calc(100dvh - 250px) !important;
-        overscroll-behavior:contain;
+      .start{
+        min-width:94px;
+
+        padding:
+          6px
+          10px;
+
+        font-size:15px;
       }
 
-      /* 画面下の固定UIぶん、デスクトップにも余白を確保 */
-      .desktop{
-        padding-bottom:220px !important;
+      .task-right{
+        width:100%;
+
+        text-align:right;
+
+        font-size:11px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+      }
+
+      .task-windows{
+        width:100%;
+
+        padding:
+          1px
+          2px
+          4px;
+
+        gap:6px;
+      }
+
+      .task-btn{
+        min-width:0;
+
+        width:auto;
+
+        max-width:none;
+
+        flex:
+          1 0
+          104px;
+
+        padding:
+          5px
+          8px;
+
+        font-size:10px;
+      }
+
+
+      /* decorations */
+
+      .sticker{
+        transform:
+          scale(.82) !important;
+
+        opacity:.88;
+      }
+
+      .float1{
+        left:2%;
+        top:17%;
+      }
+
+      .float2{
+        right:2%;
+        top:16%;
+      }
+
+      .float3{
+        left:0%;
+        top:62%;
+      }
+
+      .float4{
+        right:0%;
+        top:50%;
+      }
+
+      .float5{
+        left:8%;
+        top:80%;
+      }
+
+      .float6{
+        right:8%;
+        top:78%;
+      }
+
+      .float7{
+        left:44%;
+        top:13%;
+      }
+
+      .float8{
+        right:27%;
+        top:29%;
+      }
+
+      .float9{
+        left:20%;
+        top:88%;
+      }
+
+      .float10{
+        right:2%;
+        top:68%;
       }
     }
 
-    @supports not (height: 100dvh){
+
+    @supports not (height:100dvh){
+
       @media(max-width:680px){
+
         .window{
-          height:calc(100vh - 205px) !important;
-          max-height:calc(100vh - 205px) !important;
+          height:
+            calc(
+              100vh - 205px
+            ) !important;
+
+          max-height:
+            calc(
+              100vh - 205px
+            ) !important;
         }
+
         .content{
-          max-height:calc(100vh - 250px) !important;
+          max-height:
+            calc(
+              100vh - 250px
+            ) !important;
         }
       }
     }
 
-  
-    /* ===== V26 FORCE DotGothic16 EVERYWHERE ===== */
-    html,
-    body,
-    body *:not(svg):not(svg *){
-      font-family:"DotGothic16","MS Gothic","Hiragino Kaku Gothic ProN",sans-serif !important;
-    }
 
-    button,
-    input,
-    textarea,
-    select{
-      font-family:"DotGothic16","MS Gothic","Hiragino Kaku Gothic ProN",sans-serif !important;
-    }
+    /* reduced motion */
 
-  
-    /* ===== V27 SMART MOBILE LINE BREAKS ===== */
-    .sp-br{
-      display:none;
-    }
+    @media(prefers-reduced-motion:reduce){
 
-    .no-break{
-      white-space:nowrap;
-    }
-
-    .content{
-      line-break:strict;
-      word-break:normal;
-      overflow-wrap:break-word;
-    }
-
-    @media(max-width:680px){
-      .sp-br{
-        display:block;
+      .sticker,
+      .sparkle,
+      .window.open,
+      .window.closing,
+      .task-btn,
+      .task-btn.active,
+      .start.closing-all,
+      .taskbar.closing-all .task-btn{
+        animation:none !important;
       }
-
-      .content{
-        padding-left:14px !important;
-        padding-right:14px !important;
-      }
-
-      .content ul{
-        padding-left:1.45em;
-      }
-    }
-
-  
-    /* ===== V28 DESKTOP PLAYER POSITION FIX ===== */
-    @media(min-width:681px){
-      .player{
-        width:292px;
-        right:10px;
-        bottom:54px;
-      }
-
-      .player-body{
-        padding:10px;
-      }
-
-      .screen{
-        padding:8px;
-      }
-
-      .controls button{
-        min-width:44px;
-      }
-    }
-
-  
-    #yt-fallback-holder{
-      position:fixed;
-      left:-10000px;
-      top:-10000px;
-      width:320px;
-      height:180px;
-      opacity:.01;
-      pointer-events:none;
-      overflow:hidden;
-    }
-
-    #yt-fallback-holder iframe{
-      width:320px;
-      height:180px;
-      border:0;
     }
 
   </style>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
 </head>
 
+
 <body>
+
   <main class="desktop">
+
     <div class="stars"></div>
+
     <div class="grid"></div>
 
-    <div class="decor-layer" aria-hidden="true">
-      <div class="sticker star float1" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="7" y="1" width="2" height="4" fill="#17002f"/>
-          <rect x="5" y="3" width="6" height="2" fill="#17002f"/>
-          <rect x="6" y="5" width="4" height="2" fill="#fff"/>
-          <rect x="4" y="6" width="8" height="2" fill="#ffe95b"/>
-          <rect x="3" y="8" width="10" height="2" fill="#fff48c"/>
-          <rect x="5" y="10" width="6" height="2" fill="#ffe95b"/>
-          <rect x="6" y="12" width="4" height="2" fill="#17002f"/>
+
+    <!-- ====================================
+         FLOATING DECOR
+    ===================================== -->
+
+    <div
+      class="decor-layer"
+      aria-hidden="true"
+    >
+
+
+      <!-- STAR -->
+
+      <div
+        class="sticker star float1"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="7"
+            y="1"
+            width="2"
+            height="4"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="3"
+            width="6"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="6"
+            y="5"
+            width="4"
+            height="2"
+            fill="#fff"
+          />
+
+          <rect
+            x="4"
+            y="6"
+            width="8"
+            height="2"
+            fill="#ffe95b"
+          />
+
+          <rect
+            x="3"
+            y="8"
+            width="10"
+            height="2"
+            fill="#fff48c"
+          />
+
+          <rect
+            x="5"
+            y="10"
+            width="6"
+            height="2"
+            fill="#ffe95b"
+          />
+
+          <rect
+            x="6"
+            y="12"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker cassette float2" aria-hidden="true">
-        <svg viewBox="0 0 28 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="26" height="14" fill="#17002f"/>
-          <rect x="2" y="2" width="24" height="12" fill="#b895ff"/>
-          <rect x="3" y="3" width="22" height="3" fill="#f7eaff"/>
-          <rect x="5" y="8" width="5" height="5" fill="#fff"/>
-          <rect x="18" y="8" width="5" height="5" fill="#fff"/>
-          <rect x="6" y="9" width="3" height="3" fill="#17002f"/>
-          <rect x="19" y="9" width="3" height="3" fill="#17002f"/>
-          <rect x="11" y="8" width="6" height="1" fill="#17002f"/>
-          <rect x="11" y="10" width="6" height="1" fill="#17002f"/>
-          <rect x="11" y="12" width="6" height="1" fill="#ff73d1"/>
+
+
+      <!-- CASSETTE -->
+
+      <div
+        class="sticker cassette float2"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 28 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="1"
+            y="1"
+            width="26"
+            height="14"
+            fill="#17002f"
+          />
+
+          <rect
+            x="2"
+            y="2"
+            width="24"
+            height="12"
+            fill="#b895ff"
+          />
+
+          <rect
+            x="3"
+            y="3"
+            width="22"
+            height="3"
+            fill="#f7eaff"
+          />
+
+          <rect
+            x="5"
+            y="8"
+            width="5"
+            height="5"
+            fill="#fff"
+          />
+
+          <rect
+            x="18"
+            y="8"
+            width="5"
+            height="5"
+            fill="#fff"
+          />
+
+          <rect
+            x="6"
+            y="9"
+            width="3"
+            height="3"
+            fill="#17002f"
+          />
+
+          <rect
+            x="19"
+            y="9"
+            width="3"
+            height="3"
+            fill="#17002f"
+          />
+
+          <rect
+            x="11"
+            y="8"
+            width="6"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="11"
+            y="10"
+            width="6"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="11"
+            y="12"
+            width="6"
+            height="1"
+            fill="#ff73d1"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker cd float3" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="1" width="6" height="1" fill="#17002f"/>
-          <rect x="3" y="2" width="10" height="2" fill="#17002f"/>
-          <rect x="2" y="4" width="12" height="8" fill="#17002f"/>
-          <rect x="3" y="3" width="10" height="10" fill="#cdb8ff"/>
-          <rect x="4" y="4" width="8" height="8" fill="#8ef4ff"/>
-          <rect x="5" y="5" width="6" height="6" fill="#fff48c"/>
-          <rect x="6" y="6" width="4" height="4" fill="#ff9ad8"/>
-          <rect x="7" y="7" width="2" height="2" fill="#17002f"/>
-          <rect x="10" y="4" width="1" height="1" fill="#fff"/>
-          <rect x="11" y="5" width="1" height="1" fill="#fff"/>
+
+
+      <!-- CD -->
+
+      <div
+        class="sticker cd float3"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="5"
+            y="1"
+            width="6"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="2"
+            width="10"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="2"
+            y="4"
+            width="12"
+            height="8"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="3"
+            width="10"
+            height="10"
+            fill="#cdb8ff"
+          />
+
+          <rect
+            x="4"
+            y="4"
+            width="8"
+            height="8"
+            fill="#8ef4ff"
+          />
+
+          <rect
+            x="5"
+            y="5"
+            width="6"
+            height="6"
+            fill="#fff48c"
+          />
+
+          <rect
+            x="6"
+            y="6"
+            width="4"
+            height="4"
+            fill="#ff9ad8"
+          />
+
+          <rect
+            x="7"
+            y="7"
+            width="2"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="10"
+            y="4"
+            width="1"
+            height="1"
+            fill="#fff"
+          />
+
+          <rect
+            x="11"
+            y="5"
+            width="1"
+            height="1"
+            fill="#fff"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker cursor float4" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="1" height="9" fill="#17002f"/>
-          <rect x="3" y="3" width="1" height="7" fill="#17002f"/>
-          <rect x="4" y="4" width="1" height="5" fill="#17002f"/>
-          <rect x="5" y="5" width="1" height="4" fill="#17002f"/>
-          <rect x="6" y="6" width="1" height="3" fill="#17002f"/>
-          <rect x="7" y="7" width="1" height="2" fill="#17002f"/>
-          <rect x="8" y="8" width="1" height="1" fill="#17002f"/>
-          <rect x="3" y="2" width="8" height="1" fill="#17002f"/>
-          <rect x="2" y="11" width="1" height="3" fill="#17002f"/>
-          <rect x="3" y="12" width="1" height="2" fill="#17002f"/>
-          <rect x="4" y="13" width="1" height="1" fill="#17002f"/>
-          <rect x="4" y="8" width="2" height="6" fill="#fff"/>
-          <rect x="5" y="7" width="2" height="5" fill="#fff"/>
-          <rect x="2" y="2" width="7" height="7" fill="#ffffff" opacity="0.9"/>
+
+
+      <!-- CURSOR -->
+
+      <div
+        class="sticker cursor float4"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="2"
+            y="2"
+            width="1"
+            height="9"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="3"
+            width="1"
+            height="7"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="4"
+            width="1"
+            height="5"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="5"
+            width="1"
+            height="4"
+            fill="#17002f"
+          />
+
+          <rect
+            x="6"
+            y="6"
+            width="1"
+            height="3"
+            fill="#17002f"
+          />
+
+          <rect
+            x="7"
+            y="7"
+            width="1"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="8"
+            y="8"
+            width="1"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="2"
+            width="8"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="2"
+            y="11"
+            width="1"
+            height="3"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="12"
+            width="1"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="13"
+            width="1"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="8"
+            width="2"
+            height="6"
+            fill="#fff"
+          />
+
+          <rect
+            x="5"
+            y="7"
+            width="2"
+            height="5"
+            fill="#fff"
+          />
+
+          <rect
+            x="2"
+            y="2"
+            width="7"
+            height="7"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker heart float5" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="4" height="2" fill="#17002f"/>
-          <rect x="9" y="3" width="4" height="2" fill="#17002f"/>
-          <rect x="2" y="5" width="12" height="4" fill="#17002f"/>
-          <rect x="3" y="9" width="10" height="2" fill="#17002f"/>
-          <rect x="5" y="11" width="6" height="2" fill="#17002f"/>
-          <rect x="7" y="13" width="2" height="1" fill="#17002f"/>
-          <rect x="4" y="4" width="2" height="1" fill="#ff5cab"/>
-          <rect x="10" y="4" width="2" height="1" fill="#ff5cab"/>
-          <rect x="3" y="5" width="10" height="3" fill="#ff79c9"/>
-          <rect x="4" y="8" width="8" height="2" fill="#ff9ad8"/>
-          <rect x="6" y="10" width="4" height="2" fill="#ff79c9"/>
+
+
+      <!-- HEART -->
+
+      <div
+        class="sticker heart float5"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="3"
+            y="3"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="9"
+            y="3"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="2"
+            y="5"
+            width="12"
+            height="4"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="9"
+            width="10"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="11"
+            width="6"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="7"
+            y="13"
+            width="2"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="4"
+            width="2"
+            height="1"
+            fill="#ff5cab"
+          />
+
+          <rect
+            x="10"
+            y="4"
+            width="2"
+            height="1"
+            fill="#ff5cab"
+          />
+
+          <rect
+            x="3"
+            y="5"
+            width="10"
+            height="3"
+            fill="#ff79c9"
+          />
+
+          <rect
+            x="4"
+            y="8"
+            width="8"
+            height="2"
+            fill="#ff9ad8"
+          />
+
+          <rect
+            x="6"
+            y="10"
+            width="4"
+            height="2"
+            fill="#ff79c9"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker folder float6" aria-hidden="true">
-        <svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="7" height="2" fill="#17002f"/>
-          <rect x="1" y="4" width="22" height="10" fill="#17002f"/>
-          <rect x="2" y="5" width="20" height="8" fill="#86ffe4"/>
-          <rect x="3" y="6" width="18" height="2" fill="#bffff1"/>
-          <rect x="3" y="9" width="18" height="3" fill="#5de0c2"/>
-          <rect x="14" y="7" width="5" height="1" fill="#fff"/>
-          <rect x="15" y="10" width="4" height="1" fill="#fff"/>
+
+
+      <!-- FOLDER -->
+
+      <div
+        class="sticker folder float6"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="2"
+            y="2"
+            width="7"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="1"
+            y="4"
+            width="22"
+            height="10"
+            fill="#17002f"
+          />
+
+          <rect
+            x="2"
+            y="5"
+            width="20"
+            height="8"
+            fill="#86ffe4"
+          />
+
+          <rect
+            x="3"
+            y="6"
+            width="18"
+            height="2"
+            fill="#bffff1"
+          />
+
+          <rect
+            x="3"
+            y="9"
+            width="18"
+            height="3"
+            fill="#5de0c2"
+          />
+
+          <rect
+            x="14"
+            y="7"
+            width="5"
+            height="1"
+            fill="#fff"
+          />
+
+          <rect
+            x="15"
+            y="10"
+            width="4"
+            height="1"
+            fill="#fff"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker star float7" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="7" y="1" width="2" height="3" fill="#17002f"/>
-          <rect x="6" y="4" width="4" height="2" fill="#17002f"/>
-          <rect x="5" y="6" width="6" height="2" fill="#fff"/>
-          <rect x="3" y="7" width="10" height="2" fill="#ffe95b"/>
-          <rect x="5" y="9" width="6" height="2" fill="#fff48c"/>
-          <rect x="6" y="11" width="4" height="2" fill="#17002f"/>
+
+
+      <!-- STAR 2 -->
+
+      <div
+        class="sticker star float7"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="7"
+            y="1"
+            width="2"
+            height="3"
+            fill="#17002f"
+          />
+
+          <rect
+            x="6"
+            y="4"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="6"
+            width="6"
+            height="2"
+            fill="#fff"
+          />
+
+          <rect
+            x="3"
+            y="7"
+            width="10"
+            height="2"
+            fill="#ffe95b"
+          />
+
+          <rect
+            x="5"
+            y="9"
+            width="6"
+            height="2"
+            fill="#fff48c"
+          />
+
+          <rect
+            x="6"
+            y="11"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker skate float8" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="9" width="10" height="2" fill="#17002f"/>
-          <rect x="4" y="8" width="8" height="1" fill="#7a4cff"/>
-          <rect x="5" y="7" width="6" height="1" fill="#ffffff"/>
-          <rect x="2" y="10" width="1" height="2" fill="#17002f"/>
-          <rect x="13" y="10" width="1" height="2" fill="#17002f"/>
-          <rect x="4" y="10" width="1" height="1" fill="#ffffff"/>
-          <rect x="11" y="10" width="1" height="1" fill="#ffffff"/>
-          <rect x="3" y="11" width="2" height="2" fill="#444"/>
-          <rect x="11" y="11" width="2" height="2" fill="#444"/>
-          <rect x="4" y="12" width="1" height="1" fill="#8ef4ff"/>
-          <rect x="11" y="12" width="1" height="1" fill="#8ef4ff"/>
-          <rect x="6" y="6" width="1" height="1" fill="#ff73d1"/>
-          <rect x="9" y="6" width="1" height="1" fill="#ffe95b"/>
+
+
+      <!-- SKATE -->
+
+      <div
+        class="sticker skate float8"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="3"
+            y="9"
+            width="10"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="8"
+            width="8"
+            height="1"
+            fill="#7a4cff"
+          />
+
+          <rect
+            x="5"
+            y="7"
+            width="6"
+            height="1"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="2"
+            y="10"
+            width="1"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="13"
+            y="10"
+            width="1"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="4"
+            y="10"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="11"
+            y="10"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="3"
+            y="11"
+            width="2"
+            height="2"
+            fill="#444"
+          />
+
+          <rect
+            x="11"
+            y="11"
+            width="2"
+            height="2"
+            fill="#444"
+          />
+
+          <rect
+            x="4"
+            y="12"
+            width="1"
+            height="1"
+            fill="#8ef4ff"
+          />
+
+          <rect
+            x="11"
+            y="12"
+            width="1"
+            height="1"
+            fill="#8ef4ff"
+          />
+
+          <rect
+            x="6"
+            y="6"
+            width="1"
+            height="1"
+            fill="#ff73d1"
+          />
+
+          <rect
+            x="9"
+            y="6"
+            width="1"
+            height="1"
+            fill="#ffe95b"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker devil float9" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="2" width="2" height="2" fill="#17002f"/>
-          <rect x="10" y="2" width="2" height="2" fill="#17002f"/>
-          <rect x="3" y="4" width="10" height="8" fill="#8d59ff"/>
-          <rect x="4" y="5" width="8" height="6" fill="#a77cff"/>
-          <rect x="5" y="6" width="2" height="2" fill="#ffffff"/>
-          <rect x="9" y="6" width="2" height="2" fill="#ffffff"/>
-          <rect x="6" y="7" width="1" height="1" fill="#17002f"/>
-          <rect x="9" y="7" width="1" height="1" fill="#17002f"/>
-          <rect x="6" y="9" width="4" height="1" fill="#17002f"/>
-          <rect x="5" y="10" width="1" height="1" fill="#ff5cab"/>
-          <rect x="10" y="10" width="1" height="1" fill="#ff5cab"/>
-          <rect x="4" y="12" width="2" height="1" fill="#17002f"/>
-          <rect x="10" y="12" width="2" height="1" fill="#17002f"/>
+
+
+      <!-- DEVIL -->
+
+      <div
+        class="sticker devil float9"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="4"
+            y="2"
+            width="2"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="10"
+            y="2"
+            width="2"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="3"
+            y="4"
+            width="10"
+            height="8"
+            fill="#8d59ff"
+          />
+
+          <rect
+            x="4"
+            y="5"
+            width="8"
+            height="6"
+            fill="#a77cff"
+          />
+
+          <rect
+            x="5"
+            y="6"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="9"
+            y="6"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="6"
+            y="7"
+            width="1"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="9"
+            y="7"
+            width="1"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="6"
+            y="9"
+            width="4"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="10"
+            width="1"
+            height="1"
+            fill="#ff5cab"
+          />
+
+          <rect
+            x="10"
+            y="10"
+            width="1"
+            height="1"
+            fill="#ff5cab"
+          />
+
+          <rect
+            x="4"
+            y="12"
+            width="2"
+            height="1"
+            fill="#17002f"
+          />
+
+          <rect
+            x="10"
+            y="12"
+            width="2"
+            height="1"
+            fill="#17002f"
+          />
+
         </svg>
+
       </div>
-      <div class="sticker heart float10" aria-hidden="true">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <rect x="7" y="1" width="2" height="4" fill="#17002f"/>
-          <rect x="5" y="3" width="6" height="2" fill="#17002f"/>
-          <rect x="6" y="5" width="4" height="2" fill="#fff"/>
-          <rect x="4" y="6" width="8" height="2" fill="#ff5cab"/>
-          <rect x="3" y="8" width="10" height="2" fill="#ff9ad8"/>
-          <rect x="5" y="10" width="6" height="2" fill="#ff79c9"/>
-          <rect x="6" y="12" width="4" height="2" fill="#17002f"/>
+
+
+      <!-- PINK STAR -->
+
+      <div
+        class="sticker heart float10"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <rect
+            x="7"
+            y="1"
+            width="2"
+            height="4"
+            fill="#17002f"
+          />
+
+          <rect
+            x="5"
+            y="3"
+            width="6"
+            height="2"
+            fill="#17002f"
+          />
+
+          <rect
+            x="6"
+            y="5"
+            width="4"
+            height="2"
+            fill="#fff"
+          />
+
+          <rect
+            x="4"
+            y="6"
+            width="8"
+            height="2"
+            fill="#ff5cab"
+          />
+
+          <rect
+            x="3"
+            y="8"
+            width="10"
+            height="2"
+            fill="#ff9ad8"
+          />
+
+          <rect
+            x="5"
+            y="10"
+            width="6"
+            height="2"
+            fill="#ff79c9"
+          />
+
+          <rect
+            x="6"
+            y="12"
+            width="4"
+            height="2"
+            fill="#17002f"
+          />
+
         </svg>
+
       </div>
+
     </div>
 
+
+    <!-- ====================================
+         HERO
+    ===================================== -->
 
     <section class="hero">
-      <div class="tiny">WELCOME TO MY PROFILE SYSTEM</div>
-      <h1>PROFILE</h1>
-      <div class="subtitle">CLICK AN ICON TO OPEN ♡</div>
+
+      <div class="tiny">
+        WELCOME TO MY PROFILE SYSTEM
+      </div>
+
+      <h1>
+        PROFILE
+      </h1>
+
+      <div class="subtitle">
+        CLICK AN ICON TO OPEN ♡
+      </div>
+
     </section>
 
-    <section class="desktop-icons" aria-label="プロフィールメニュー">
-      <button class="icon" data-open="about">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="2" y="2" width="12" height="9" fill="#17002f"/>
-        <rect x="3" y="3" width="10" height="7" fill="#5cf6ff"/>
-        <rect x="4" y="4" width="8" height="5" fill="#2a62ff"/>
-        <rect x="5" y="5" width="2" height="2" fill="#ff88d8"/>
-        <rect x="8" y="5" width="3" height="1" fill="#ffffff"/>
-        <rect x="8" y="7" width="2" height="1" fill="#ffffff"/>
-        <rect x="6" y="11" width="4" height="2" fill="#17002f"/>
-        <rect x="4" y="13" width="8" height="1" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">ABOUT_ME.TXT</span>
+
+    <!-- ====================================
+         ICONS
+    ===================================== -->
+
+    <section
+      class="desktop-icons"
+      aria-label="プロフィールメニュー"
+    >
+
+
+      <!-- ABOUT -->
+
+      <button
+        class="icon"
+        data-open="about"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="2"
+              y="2"
+              width="12"
+              height="9"
+              fill="#17002f"
+            />
+
+            <rect
+              x="3"
+              y="3"
+              width="10"
+              height="7"
+              fill="#5cf6ff"
+            />
+
+            <rect
+              x="4"
+              y="4"
+              width="8"
+              height="5"
+              fill="#2a62ff"
+            />
+
+            <rect
+              x="5"
+              y="5"
+              width="2"
+              height="2"
+              fill="#ff88d8"
+            />
+
+            <rect
+              x="8"
+              y="5"
+              width="3"
+              height="1"
+              fill="#ffffff"
+            />
+
+            <rect
+              x="8"
+              y="7"
+              width="2"
+              height="1"
+              fill="#ffffff"
+            />
+
+            <rect
+              x="6"
+              y="11"
+              width="4"
+              height="2"
+              fill="#17002f"
+            />
+
+            <rect
+              x="4"
+              y="13"
+              width="8"
+              height="1"
+              fill="#17002f"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          ABOUT_ME.TXT
+        </span>
+
       </button>
 
-      <button class="icon" data-open="love">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="3" y="3" width="4" height="2" fill="#ff5cab"/>
-        <rect x="9" y="3" width="4" height="2" fill="#ff5cab"/>
-        <rect x="2" y="5" width="12" height="4" fill="#ff79c9"/>
-        <rect x="3" y="9" width="10" height="2" fill="#ff79c9"/>
-        <rect x="5" y="11" width="6" height="2" fill="#ff79c9"/>
-        <rect x="7" y="13" width="2" height="1" fill="#ff79c9"/>
-        <rect x="4" y="4" width="2" height="1" fill="#ffffff"/>
-        <rect x="2" y="5" width="1" height="4" fill="#17002f"/>
-        <rect x="13" y="5" width="1" height="4" fill="#17002f"/>
-        <rect x="3" y="9" width="1" height="2" fill="#17002f"/>
-        <rect x="12" y="9" width="1" height="2" fill="#17002f"/>
-        <rect x="5" y="11" width="1" height="2" fill="#17002f"/>
-        <rect x="10" y="11" width="1" height="2" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">RYUI.EXE</span>
+
+      <!-- RYUI -->
+
+      <button
+        class="icon"
+        data-open="love"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="3"
+              y="3"
+              width="4"
+              height="2"
+              fill="#ff5cab"
+            />
+
+            <rect
+              x="9"
+              y="3"
+              width="4"
+              height="2"
+              fill="#ff5cab"
+            />
+
+            <rect
+              x="2"
+              y="5"
+              width="12"
+              height="4"
+              fill="#ff79c9"
+            />
+
+            <rect
+              x="3"
+              y="9"
+              width="10"
+              height="2"
+              fill="#ff79c9"
+            />
+
+            <rect
+              x="5"
+              y="11"
+              width="6"
+              height="2"
+              fill="#ff79c9"
+            />
+
+            <rect
+              x="7"
+              y="13"
+              width="2"
+              height="1"
+              fill="#ff79c9"
+            />
+
+            <rect
+              x="4"
+              y="4"
+              width="2"
+              height="1"
+              fill="#ffffff"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          RYUI.EXE
+        </span>
+
       </button>
 
-      <button class="icon" data-open="attention">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="7" y="1" width="2" height="2" fill="#17002f"/>
-        <rect x="6" y="3" width="4" height="2" fill="#ffe95b"/>
-        <rect x="5" y="5" width="6" height="2" fill="#ffe95b"/>
-        <rect x="4" y="7" width="8" height="2" fill="#ffe95b"/>
-        <rect x="3" y="9" width="10" height="2" fill="#ffe95b"/>
-        <rect x="2" y="11" width="12" height="2" fill="#ffe95b"/>
-        <rect x="7" y="5" width="2" height="4" fill="#17002f"/>
-        <rect x="7" y="10" width="2" height="2" fill="#17002f"/>
-        <rect x="2" y="13" width="12" height="1" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">ATTENTION.TXT</span>
+
+      <!-- ATTENTION -->
+
+      <button
+        class="icon"
+        data-open="attention"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="7"
+              y="1"
+              width="2"
+              height="2"
+              fill="#17002f"
+            />
+
+            <rect
+              x="6"
+              y="3"
+              width="4"
+              height="2"
+              fill="#ffe95b"
+            />
+
+            <rect
+              x="5"
+              y="5"
+              width="6"
+              height="2"
+              fill="#ffe95b"
+            />
+
+            <rect
+              x="4"
+              y="7"
+              width="8"
+              height="2"
+              fill="#ffe95b"
+            />
+
+            <rect
+              x="3"
+              y="9"
+              width="10"
+              height="2"
+              fill="#ffe95b"
+            />
+
+            <rect
+              x="2"
+              y="11"
+              width="12"
+              height="2"
+              fill="#ffe95b"
+            />
+
+            <rect
+              x="7"
+              y="5"
+              width="2"
+              height="4"
+              fill="#17002f"
+            />
+
+            <rect
+              x="7"
+              y="10"
+              width="2"
+              height="2"
+              fill="#17002f"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          ATTENTION.TXT
+        </span>
+
       </button>
 
-      <button class="icon" data-open="onlyone">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="5" y="2" width="6" height="1" fill="#17002f"/>
-        <rect x="4" y="3" width="2" height="4" fill="#17002f"/>
-        <rect x="10" y="3" width="2" height="4" fill="#17002f"/>
-        <rect x="6" y="3" width="4" height="1" fill="#7df5ff"/>
-        <rect x="3" y="7" width="10" height="7" fill="#63ffd8"/>
-        <rect x="3" y="7" width="10" height="1" fill="#ffffff"/>
-        <rect x="7" y="9" width="2" height="2" fill="#17002f"/>
-        <rect x="7" y="11" width="2" height="2" fill="#17002f"/>
-        <rect x="2" y="8" width="1" height="5" fill="#17002f"/>
-        <rect x="13" y="8" width="1" height="5" fill="#17002f"/>
-        <rect x="3" y="14" width="10" height="1" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">ONLY_ONE.DAT</span>
+
+      <!-- ONLY ONE -->
+
+      <button
+        class="icon"
+        data-open="onlyone"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="5"
+              y="2"
+              width="6"
+              height="1"
+              fill="#17002f"
+            />
+
+            <rect
+              x="4"
+              y="3"
+              width="2"
+              height="4"
+              fill="#17002f"
+            />
+
+            <rect
+              x="10"
+              y="3"
+              width="2"
+              height="4"
+              fill="#17002f"
+            />
+
+            <rect
+              x="3"
+              y="7"
+              width="10"
+              height="7"
+              fill="#63ffd8"
+            />
+
+            <rect
+              x="7"
+              y="9"
+              width="2"
+              height="4"
+              fill="#17002f"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          ONLY_ONE.DAT
+        </span>
+
       </button>
 
-      <button class="icon" data-open="other">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="2" y="2" width="12" height="12" fill="#17002f"/>
-        <rect x="3" y="3" width="10" height="10" fill="#b08cff"/>
-        <rect x="5" y="3" width="6" height="4" fill="#5cf6ff"/>
-        <rect x="6" y="4" width="3" height="2" fill="#ffffff"/>
-        <rect x="10" y="4" width="1" height="3" fill="#17002f"/>
-        <rect x="5" y="9" width="6" height="4" fill="#fff7ff"/>
-        <rect x="6" y="10" width="4" height="1" fill="#ff79c9"/>
-        <rect x="6" y="12" width="4" height="1" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">OTHER.ZIP</span>
+
+      <!-- OTHER -->
+
+      <button
+        class="icon"
+        data-open="other"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="2"
+              y="2"
+              width="12"
+              height="12"
+              fill="#17002f"
+            />
+
+            <rect
+              x="3"
+              y="3"
+              width="10"
+              height="10"
+              fill="#b08cff"
+            />
+
+            <rect
+              x="5"
+              y="3"
+              width="6"
+              height="4"
+              fill="#5cf6ff"
+            />
+
+            <rect
+              x="5"
+              y="9"
+              width="6"
+              height="4"
+              fill="#fff7ff"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          OTHER.ZIP
+        </span>
+
       </button>
 
-      <button class="icon" data-open="links">
-        <span class="pixel pixel-art" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <rect x="5" y="1" width="6" height="1" fill="#17002f"/>
-        <rect x="3" y="2" width="10" height="1" fill="#17002f"/>
-        <rect x="2" y="3" width="12" height="10" fill="#17002f"/>
-        <rect x="3" y="4" width="10" height="8" fill="#68efff"/>
-        <rect x="7" y="4" width="2" height="8" fill="#ffffff"/>
-        <rect x="3" y="7" width="10" height="2" fill="#ffffff"/>
-        <rect x="5" y="4" width="1" height="8" fill="#5b1f95"/>
-        <rect x="10" y="4" width="1" height="8" fill="#5b1f95"/>
-        <rect x="5" y="13" width="6" height="1" fill="#17002f"/>
-      </svg>
-    </span>
-        <span class="label">LINKS.URL</span>
+
+      <!-- LINKS -->
+
+      <button
+        class="icon"
+        data-open="links"
+      >
+
+        <span
+          class="pixel pixel-art"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 16 16"
+          >
+
+            <rect
+              x="5"
+              y="1"
+              width="6"
+              height="1"
+              fill="#17002f"
+            />
+
+            <rect
+              x="3"
+              y="2"
+              width="10"
+              height="1"
+              fill="#17002f"
+            />
+
+            <rect
+              x="2"
+              y="3"
+              width="12"
+              height="10"
+              fill="#17002f"
+            />
+
+            <rect
+              x="3"
+              y="4"
+              width="10"
+              height="8"
+              fill="#68efff"
+            />
+
+            <rect
+              x="7"
+              y="4"
+              width="2"
+              height="8"
+              fill="#ffffff"
+            />
+
+            <rect
+              x="3"
+              y="7"
+              width="10"
+              height="2"
+              fill="#ffffff"
+            />
+
+          </svg>
+
+        </span>
+
+        <span class="label">
+          LINKS.URL
+        </span>
+
       </button>
+
     </section>
+
   </main>
 
-  <!-- ABOUT -->
-  <section class="window" id="about">
+
+  <!-- ====================================
+       ABOUT
+  ===================================== -->
+
+  <section
+    class="window"
+    id="about"
+  >
+
     <div class="titlebar">
-      <span>ABOUT_ME.TXT</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
-    </div>
-    <div class="content">
-      <h2>♡ ABOUT ME</h2>
-      <p>19y（07）｜関東</p>
-      <p>18TRIP｜白光琉衣</p>
-      <p>同担様×｜各一思考</p>
-      <div class="note">
-        普段から遊べるお友達、現場でお会いできるお友達激求です♡<br>
-        ほとんど0からのスタートになります✨
+
+      <span>
+        ABOUT_ME.TXT
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
       </div>
-      <p style="margin-top:16px">お繋ぎ先は永久🔐 FF20↓となります❣️</p>
+
     </div>
+
+    <div class="content">
+
+      <h2>
+        ♡ ABOUT ME
+      </h2>
+
+      <p>
+        19y（07）｜関東
+      </p>
+
+      <p>
+        18TRIP｜白光琉衣
+      </p>
+
+      <p>
+        同担様×｜各一思考
+      </p>
+
+      <div class="note">
+
+        普段から遊べるお友達、現場でお会いできるお友達激求です♡
+        <br>
+
+        ほとんど0からのスタートになります✨
+
+      </div>
+
+      <p style="margin-top:16px">
+        お繋ぎ先は永久🔐 FF20↓となります❣️
+      </p>
+
+    </div>
+
   </section>
 
-  <!-- LOVE -->
-  <section class="window" id="love">
+
+  <!-- ====================================
+       RYUI
+  ===================================== -->
+
+  <section
+    class="window"
+    id="love"
+  >
+
     <div class="titlebar">
-      <span>RYUI.EXE</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
+
+      <span>
+        RYUI.EXE
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
+      </div>
+
     </div>
+
     <div class="content">
-      <h2>♡ 18TRIP / 白光琉衣</h2>
-      <p>リリース時（2024/5〜）から応援しています📣</p>
-      <p>琉衣の同担様は完全にNGです🥲💦</p>
-      <p>FF内被り等が苦手なため、<br class="sp-br">基本的には完全相互各一でのご縁を求めております🎀</p>
-      <p>本編 / 区ノベ / イベント読了済み</p>
-      <p>夢思考あります💭（専垢でのみ発信）</p>
+
+      <h2>
+        ♡ 18TRIP / 白光琉衣
+      </h2>
+
+      <p>
+        リリース時（2024/5〜）から応援しています📣
+      </p>
+
+      <p>
+        琉衣の同担様は完全にNGです🥲💦
+      </p>
+
+      <p>
+        FF内被り等が苦手なため、
+        <br class="sp-br">
+        基本的には完全相互各一でのご縁を求めております🎀
+      </p>
+
+      <p>
+        本編 / 区ノベ / イベント読了済み
+      </p>
+
+      <p>
+        夢思考あります💭（専垢でのみ発信）
+      </p>
+
     </div>
+
   </section>
 
-  <!-- ATTENTION -->
-  <section class="window" id="attention">
+
+  <!-- ====================================
+       ATTENTION
+  ===================================== -->
+
+  <section
+    class="window"
+    id="attention"
+  >
+
     <div class="titlebar">
-      <span>ATTENTION.TXT</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
+
+      <span>
+        ATTENTION.TXT
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
+      </div>
+
     </div>
+
     <div class="content">
-      <h2>⚠ BEFORE FOLLOW</h2>
+
+      <h2>
+        ⚠ BEFORE FOLLOW
+      </h2>
+
       <ul>
-        <li>男性の方</li>
-        <li>u15の方</li>
-        <li>同担様 / 琉衣を2推し以降で<br class="sp-br">応援されている方</li>
-        <li>白光琉衣と聞いて少しでも思い当たる方</li>
-        <li>各一対応が難しい方、または<br class="sp-br">仲良くなってから各一対応のみの方</li>
-        <li>夢思考に理解のない方</li>
-        <li>その他、記載内容にご理解いただけない方</li>
+
+        <li>
+          男性の方
+        </li>
+
+        <li>
+          u15の方
+        </li>
+
+        <li>
+          同担様 / 琉衣を2推し以降で
+          <br class="sp-br">
+          応援されている方
+        </li>
+
+        <li>
+          白光琉衣と聞いて少しでも思い当たる方
+        </li>
+
+        <li>
+          各一対応が難しい方、または
+          <br class="sp-br">
+          仲良くなってから各一対応のみの方
+        </li>
+
+        <li>
+          夢思考に理解のない方
+        </li>
+
+        <li>
+          その他、記載内容にご理解いただけない方
+        </li>
+
       </ul>
 
       <div class="note">
-        反応前にFF内をご確認いただき、<br class="sp-br">白光琉衣を応援されている方（2推し以降含む）が<br class="sp-br">いらっしゃる場合は、反応をご遠慮いただけますと幸いです🙇
+
+        反応前にFF内をご確認いただき、
+        <br class="sp-br">
+
+        白光琉衣を応援されている方（2推し以降含む）が
+        <br class="sp-br">
+
+        いらっしゃる場合は、反応をご遠慮いただけますと幸いです🙇
+
       </div>
 
-      <p style="margin-top:16px">上記に当てはまる方とのお繋がりは<br class="sp-br">ご遠慮させていただきます。</p>
+      <p style="margin-top:16px">
+
+        上記に当てはまる方とのお繋がりは
+        <br class="sp-br">
+
+        ご遠慮させていただきます。
+
+      </p>
+
     </div>
+
   </section>
 
-  <!-- ONLY ONE -->
-  <section class="window" id="onlyone">
+
+  <!-- ====================================
+       ONLY ONE
+  ===================================== -->
+
+  <section
+    class="window"
+    id="onlyone"
+  >
+
     <div class="titlebar">
-      <span>ONLY_ONE.DAT</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
+
+      <span>
+        ONLY_ONE.DAT
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
+      </div>
+
     </div>
+
     <div class="content">
-      <h2>🔐 ONLY ONE</h2>
-      <p>お繋ぎ先は完全各一対応のアカウントとなります🎀</p>
-      <p>今回ご縁をいただくアカウント内では、<br class="sp-br">白光琉衣に関する各一対応を必ずお願いいたします。</p>
-      <p>こちらからは、お繋ぎ先に限らず<br class="sp-br">他アカウント・他のSNSを含め、<br class="sp-br">基本的に同様の対応をさせていただきます。</p>
-      <p>可能であれば、同様にご配慮いただけますと嬉しいです🍀</p>
-      <p>また、FF様に琉衣を2推し以降で<br class="sp-br">応援されている方がいらっしゃる場合も、<br class="sp-br">お繋がりをご遠慮させていただきます💦</p>
+
+      <h2>
+        🔐 ONLY ONE
+      </h2>
+
+      <p>
+        お繋ぎ先は完全各一対応のアカウントとなります🎀
+      </p>
+
+      <p>
+
+        今回ご縁をいただくアカウント内では、
+        <br class="sp-br">
+
+        白光琉衣に関する各一対応を必ずお願いいたします。
+
+      </p>
+
+      <p>
+
+        こちらからは、お繋ぎ先に限らず
+        <br class="sp-br">
+
+        他アカウント・他のSNSを含め、
+        <br class="sp-br">
+
+        基本的に同様の対応をさせていただきます。
+
+      </p>
+
+      <p>
+        可能であれば、同様にご配慮いただけますと嬉しいです🍀
+      </p>
+
+      <p>
+
+        また、FF様に琉衣を2推し以降で
+        <br class="sp-br">
+
+        応援されている方がいらっしゃる場合も、
+        <br class="sp-br">
+
+        お繋がりをご遠慮させていただきます💦
+
+      </p>
+
     </div>
+
   </section>
 
-  <!-- OTHER -->
-  <section class="window" id="other">
+
+  <!-- ====================================
+       OTHER
+  ===================================== -->
+
+  <section
+    class="window"
+    id="other"
+  >
+
     <div class="titlebar">
-      <span>OTHER.ZIP</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
-    </div>
-    <div class="content">
-      <h2>💾 OTHER / LIKE</h2>
-      <p>アイドリッシュセブン / 原神 /<br class="sp-br"> <span class="no-break">ALIEN STAGE</span> / etc.</p>
 
-      <p style="margin-top:16px">共通のものがありましたらぜひお話したいです♡</p>
-      <p>グッズ収集やイベント参加も好きです🎀</p>
-      <p>通話やカフェ活なども大好きなので、<br class="sp-br">一緒に遊べるくらい仲良くなれたら嬉しいです💕</p>
+      <span>
+        OTHER.ZIP
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
+      </div>
+
     </div>
+
+    <div class="content">
+
+      <h2>
+        💾 OTHER / LIKE
+      </h2>
+
+      <p>
+
+        アイドリッシュセブン / 原神 /
+        <br class="sp-br">
+
+        <span class="no-break">
+          ALIEN STAGE
+        </span>
+
+        / etc.
+
+      </p>
+
+      <p style="margin-top:16px">
+        共通のものがありましたらぜひお話したいです♡
+      </p>
+
+      <p>
+        グッズ収集やイベント参加も好きです🎀
+      </p>
+
+      <p>
+
+        通話やカフェ活なども大好きなので、
+        <br class="sp-br">
+
+        一緒に遊べるくらい仲良くなれたら嬉しいです💕
+
+      </p>
+
+    </div>
+
   </section>
 
-  <!-- LINKS -->
-  <section class="window" id="links">
+
+  <!-- ====================================
+       LINKS
+  ===================================== -->
+
+  <section
+    class="window"
+    id="links"
+  >
+
     <div class="titlebar">
-      <span>LINKS.URL</span>
-      <div class="winbuttons"><button class="winbtn close" aria-label="閉じる">✕</button></div>
+
+      <span>
+        LINKS.URL
+      </span>
+
+      <div class="winbuttons">
+
+        <button
+          class="winbtn close"
+          aria-label="閉じる"
+        >
+          ✕
+        </button>
+
+      </div>
+
     </div>
+
     <div class="content">
-      <h2>🌐 LINKS</h2>
 
-      <X：href="#" の # を実際のURLに置き換えてください -->
-      <a class="linkbtn" href="https://x.com/r___2612">お繋ぎ先 X</a>
-<a class="linkbtn" href="https://note.com/b612_r">NOTE</a>
+      <h2>
+        🌐 LINKS
+      </h2>
+
+
+      <a
+        class="linkbtn"
+        href="https://x.com/r___2612"
+        data-link="https://x.com/r___2612"
+      >
+        お繋ぎ先 X
+      </a>
+
+
+      <a
+        class="linkbtn"
+        href="https://note.com/b612_r"
+        data-link="https://note.com/b612_r"
+      >
+        NOTE
+      </a>
 
     </div>
+
   </section>
 
-  <!-- MUSIC PLAYER -->
+
+  <!-- ====================================
+       MUSIC PLAYER
+  ===================================== -->
+
   <aside class="player">
+
     <div class="player-head">
-      <span>♫ MINI PLAYER</span>
-      <span>ONLINE ♡</span>
+
+      <span>
+        ♫ MINI PLAYER
+      </span>
+
+      <span>
+        ONLINE ♡
+      </span>
+
     </div>
+
     <div class="player-body">
+
       <div class="screen">
-        <div>NOW PLAYING</div>
-        <div class="song" id="song-title">TRACK 01 / set your YouTube video ID</div>
+
+        <div>
+          NOW PLAYING
+        </div>
+
+        <div
+          class="song"
+          id="song-title"
+        >
+          夜にダンス
+        </div>
+
       </div>
+
       <div class="controls">
-        <button id="prev" aria-label="前の曲">⏮</button>
-        <button id="play" aria-label="再生・停止">▶</button>
-        <button id="next" aria-label="次の曲">⏭</button>
+
+        <button
+          id="prev"
+          aria-label="前の曲"
+        >
+          ⏮
+        </button>
+
+        <button
+          id="play"
+          aria-label="再生・停止"
+        >
+          ▶
+        </button>
+
+        <button
+          id="next"
+          aria-label="次の曲"
+        >
+          ⏭
+        </button>
+
       </div>
+
     </div>
+
   </aside>
 
-  <div id="yt-holder"><div id="yt-player"></div></div>
-  <div id="yt-fallback-holder" aria-hidden="true"></div>
+
+  <div id="yt-holder">
+
+    <div id="yt-player"></div>
+
+  </div>
+
+
+  <div
+    id="yt-fallback-holder"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ====================================
+       TASK BAR
+  ===================================== -->
 
   <footer class="taskbar">
-    <button class="start" id="homeBtn">▣ CLOSE ALL</button>
-    <div class="task-windows" id="taskWindows" aria-label="open windows"></div>
-    <div class="task-right"><span id="clock">00:00</span> / PROFILE.EXE</div>
+
+    <button
+      class="start"
+      id="homeBtn"
+    >
+      ▣ CLOSE ALL
+    </button>
+
+    <div
+      class="task-windows"
+      id="taskWindows"
+      aria-label="open windows"
+    ></div>
+
+    <div class="task-right">
+
+      <span id="clock">
+        00:00
+      </span>
+
+      / PROFILE.EXE
+
+    </div>
+
   </footer>
 
+
+  <!-- ====================================
+       SCRIPT
+  ===================================== -->
+
   <script>
-    // =============================
-    // WINDOWS
-    // =============================
+
+    /* ========================================
+       WINDOWS
+    ======================================== */
+
     let topZ = 60;
 
-    document.querySelectorAll('[data-open]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const w = document.getElementById(btn.dataset.open);
 
-        if (w.classList.contains('open')) {
-          w.classList.remove('open');
-          void w.offsetWidth;
-        }
+    document
+      .querySelectorAll('[data-open]')
+      .forEach(btn => {
 
-        w.classList.add('open');
-        focusWindow(w);
-        syncTaskbar();
-      });
-    });
+        btn.addEventListener(
+          'click',
+          () => {
 
-    document.querySelectorAll('.window').forEach(w => {
-      w.addEventListener('pointerdown', (e) => {
-        if (!e.target.closest('.close')) focusWindow(w);
-      });
+            const w =
+              document.getElementById(
+                btn.dataset.open
+              );
 
-      const closeBtn = w.querySelector('.close');
+            if(
+              w.classList.contains(
+                'open'
+              )
+            ){
 
-      // pointerdown を親ウィンドウへ伝えないことで、
-      // iPhoneでも閉じるタップがフォーカス処理に奪われないようにする
-      closeBtn.addEventListener('pointerdown', (e) => {
-        e.stopPropagation();
-      });
+              w.classList.remove(
+                'open'
+              );
 
-      closeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        w.classList.remove('open');
-        w.classList.remove('active');
-        syncTaskbar();
-      });
-    });
+              void w.offsetWidth;
+            }
 
-    function focusWindow(w){
-      document.querySelectorAll('.window').forEach(x => x.classList.remove('active'));
-      topZ += 1;
-      w.style.zIndex = topZ;
-      w.classList.add('active');
-      syncTaskbar();
-    }
+            w.classList.add(
+              'open'
+            );
 
-    // =============================
-    // DRAG WINDOWS (desktop only)
-    // =============================
-    document.querySelectorAll('.titlebar').forEach(bar => {
-      const win = bar.closest('.window');
-      let drag = false, sx = 0, sy = 0, ox = 0, oy = 0;
+            focusWindow(w);
 
-      bar.addEventListener('pointerdown', e => {
-        if (window.innerWidth <= 680 || e.target.closest('button')) return;
-        drag = true;
-        focusWindow(win);
-
-        const r = win.getBoundingClientRect();
-        win.style.transform = 'none';
-        win.style.left = r.left + 'px';
-        win.style.top = r.top + 'px';
-
-        sx = e.clientX;
-        sy = e.clientY;
-        ox = r.left;
-        oy = r.top;
-
-        bar.setPointerCapture(e.pointerId);
-      });
-
-      bar.addEventListener('pointermove', e => {
-        if (!drag) return;
-
-        let nx = ox + (e.clientX - sx);
-        let ny = oy + (e.clientY - sy);
-
-        nx = Math.max(0, Math.min(nx, window.innerWidth - win.offsetWidth));
-        ny = Math.max(0, Math.min(ny, window.innerHeight - 55));
-
-        win.style.left = nx + 'px';
-        win.style.top = ny + 'px';
-      });
-
-      const stop = () => drag = false;
-      bar.addEventListener('pointerup', stop);
-      bar.addEventListener('pointercancel', stop);
-    });
-
-    document.getElementById('homeBtn').addEventListener('click', () => {
-      const btn = document.getElementById('homeBtn');
-      const bar = document.querySelector('.taskbar');
-      const openWindows = [...document.querySelectorAll('.window.open')];
-
-      if (!openWindows.length) {
-        btn.classList.remove('closing-all');
-        void btn.offsetWidth;
-        btn.classList.add('closing-all');
-        setTimeout(() => btn.classList.remove('closing-all'), 380);
-        return;
-      }
-
-      btn.classList.add('closing-all');
-      bar.classList.add('closing-all');
-
-      openWindows.forEach((w, i) => {
-        w.style.setProperty('--close-delay', `${i * 45}ms`);
-        w.classList.add('closing');
-      });
-
-      const total = 330 + Math.max(0, openWindows.length - 1) * 45;
-
-      setTimeout(() => {
-        openWindows.forEach(w => {
-          w.classList.remove('open', 'active', 'closing');
-          w.style.removeProperty('--close-delay');
-        });
-
-        btn.classList.remove('closing-all');
-        bar.classList.remove('closing-all');
-        syncTaskbar();
-      }, total);
-    });
-
-
-    // =============================
-    // TASKBAR + INITIAL OPEN WINDOWS
-    // =============================
-    const taskWindows = document.getElementById('taskWindows');
-
-    function getWindowTitle(w){
-      return w.querySelector('.titlebar span').textContent.trim();
-    }
-
-    function syncTaskbar(){
-      taskWindows.innerHTML = '';
-      const openWindows = [...document.querySelectorAll('.window.open')];
-      openWindows.forEach(w => {
-        const btn = document.createElement('button');
-        btn.className = 'task-btn' + (w.classList.contains('active') ? ' active' : '');
-        btn.textContent = getWindowTitle(w);
-        btn.addEventListener('click', () => {
-          if (!w.classList.contains('open')) {
-            w.classList.add('open');
+            syncTaskbar();
           }
-          focusWindow(w);
-        });
-        taskWindows.appendChild(btn);
+        );
       });
-    }
-
-    function openWindowById(id, left, top){
-      const w = document.getElementById(id);
-      if (!w) return;
-      w.classList.add('open');
-      w.style.transform = 'none';
-      w.style.left = left;
-      w.style.top = top;
-      focusWindow(w);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      // 初期表示ではウィンドウを開かない
-      // ユーザーがデスクトップ上のアイコンを押したときだけ表示する
-      syncTaskbar();
-    });
 
 
-    // =============================
-    // CLOCK
-    // =============================
-    function updateClock(){
-      const d = new Date();
-      const hh = String(d.getHours()).padStart(2,'0');
-      const mm = String(d.getMinutes()).padStart(2,'0');
-      document.getElementById('clock').textContent = hh + ':' + mm;
-    }
-    updateClock();
-    setInterval(updateClock, 30000);
+    document
+      .querySelectorAll('.window')
+      .forEach(w => {
 
-    // =============================
-    // YOUTUBE MUSIC PLAYER
-    // APIが使える環境ではIFrame APIで再生。
-    // file:// や一部WebViewでAPIが使えない場合は、
-    // ユーザー操作時に埋め込みiframeを生成するフォールバックを使用。
-    // =============================
-    const tracks = [
-      { title: "夜にダンス", videoId: "3lI-lwxjdK0" }
-    ];
+        w.addEventListener(
+          'pointerdown',
+          e => {
 
-    let currentTrack = 0;
-    let ytPlayer = null;
-    let ytReady = false;
-    let isPlaying = false;
-    let fallbackPlaying = false;
+            if(
+              e.target.closest(
+                '.linkbtn'
+              )
+            ){
+              return;
+            }
 
-    const playBtn = document.getElementById('play');
-    const fallbackHolder = document.getElementById('yt-fallback-holder');
-
-    function updateSongTitle(){
-      document.getElementById('song-title').textContent = tracks[currentTrack].title;
-    }
-
-    function updatePlayButton(){
-      playBtn.textContent = isPlaying ? '⏸' : '▶';
-    }
-
-    function stopFallback(){
-      fallbackHolder.innerHTML = '';
-      fallbackPlaying = false;
-      isPlaying = false;
-      updatePlayButton();
-    }
-
-    function startFallback(){
-      fallbackHolder.innerHTML = '';
-
-      const iframe = document.createElement('iframe');
-      iframe.src =
-        'https://www.youtube.com/embed/' +
-        tracks[currentTrack].videoId +
-        '?autoplay=1&playsinline=1&controls=0&rel=0';
-
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.title = tracks[currentTrack].title;
-
-      fallbackHolder.appendChild(iframe);
-      fallbackPlaying = true;
-      isPlaying = true;
-      updatePlayButton();
-    }
-
-    function togglePlayback(){
-      // YouTube IFrame APIが準備済みなら通常制御
-      if (ytReady && ytPlayer &&
-          typeof ytPlayer.playVideo === 'function' &&
-          typeof ytPlayer.pauseVideo === 'function') {
-
-        if (fallbackPlaying) stopFallback();
-
-        const state = ytPlayer.getPlayerState();
-
-        if (state === YT.PlayerState.PLAYING) {
-          ytPlayer.pauseVideo();
-        } else {
-          ytPlayer.playVideo();
-        }
-        return;
-      }
-
-      // ローカルHTML等でAPIが準備できない場合のフォールバック
-      if (fallbackPlaying) {
-        stopFallback();
-      } else {
-        startFallback();
-      }
-    }
-
-    function loadTrack(index, autoplay=true){
-      currentTrack = (index + tracks.length) % tracks.length;
-      updateSongTitle();
-
-      if (fallbackPlaying) {
-        stopFallback();
-        if (autoplay) startFallback();
-        return;
-      }
-
-      if (ytReady && ytPlayer) {
-        if (autoplay) ytPlayer.loadVideoById(tracks[currentTrack].videoId);
-        else ytPlayer.cueVideoById(tracks[currentTrack].videoId);
-      } else if (autoplay) {
-        startFallback();
-      }
-    }
-
-    function nextTrack(){ loadTrack(currentTrack + 1, true); }
-    function prevTrack(){ loadTrack(currentTrack - 1, true); }
-
-    updateSongTitle();
-    updatePlayButton();
-
-    document.getElementById('next').addEventListener('click', nextTrack);
-    document.getElementById('prev').addEventListener('click', prevTrack);
-    playBtn.addEventListener('click', togglePlayback);
-
-    // YouTube IFrame Player API
-    window.onYouTubeIframeAPIReady = function(){
-      const playerVars = {
-        playsinline: 1,
-        controls: 0,
-        rel: 0
-      };
-
-      // http/https公開時のみoriginを渡す。file://では渡さない。
-      if (location.protocol === 'http:' || location.protocol === 'https:') {
-        playerVars.origin = location.origin;
-      }
-
-      try {
-        ytPlayer = new YT.Player('yt-player', {
-          height: '180',
-          width: '320',
-          videoId: tracks[currentTrack].videoId,
-          playerVars,
-          events: {
-            onReady: () => {
-              ytReady = true;
-              updateSongTitle();
-            },
-            onStateChange: e => {
-              if (e.data === YT.PlayerState.PLAYING) {
-                isPlaying = true;
-              } else if (
-                e.data === YT.PlayerState.PAUSED ||
-                e.data === YT.PlayerState.ENDED ||
-                e.data === YT.PlayerState.CUED
-              ) {
-                isPlaying = false;
-              }
-
-              updatePlayButton();
-
-              if (e.data === YT.PlayerState.ENDED) nextTrack();
-            },
-            onError: () => {
-              ytReady = false;
+            if(
+              !e.target.closest(
+                '.close'
+              )
+            ){
+              focusWindow(w);
             }
           }
+        );
+
+
+        const closeBtn =
+          w.querySelector(
+            '.close'
+          );
+
+
+        closeBtn.addEventListener(
+          'pointerdown',
+          e => {
+
+            e.stopPropagation();
+          }
+        );
+
+
+        closeBtn.addEventListener(
+          'click',
+          e => {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            w.classList.remove(
+              'open'
+            );
+
+            w.classList.remove(
+              'active'
+            );
+
+            syncTaskbar();
+          }
+        );
+      });
+
+
+    function focusWindow(w){
+
+      document
+        .querySelectorAll('.window')
+        .forEach(x => {
+
+          x.classList.remove(
+            'active'
+          );
         });
-      } catch (err) {
-        ytReady = false;
+
+
+      topZ += 1;
+
+
+      w.style.zIndex =
+        topZ;
+
+
+      w.classList.add(
+        'active'
+      );
+
+
+      syncTaskbar();
+    }
+
+
+    /* ========================================
+       DRAG WINDOWS
+    ======================================== */
+
+    document
+      .querySelectorAll('.titlebar')
+      .forEach(bar => {
+
+        const win =
+          bar.closest(
+            '.window'
+          );
+
+
+        let drag = false;
+
+        let sx = 0;
+
+        let sy = 0;
+
+        let ox = 0;
+
+        let oy = 0;
+
+
+        bar.addEventListener(
+          'pointerdown',
+          e => {
+
+            if(
+              window.innerWidth <= 680 ||
+              e.target.closest(
+                'button'
+              )
+            ){
+              return;
+            }
+
+
+            drag = true;
+
+
+            focusWindow(win);
+
+
+            const r =
+              win.getBoundingClientRect();
+
+
+            win.style.transform =
+              'none';
+
+
+            win.style.left =
+              r.left + 'px';
+
+
+            win.style.top =
+              r.top + 'px';
+
+
+            sx =
+              e.clientX;
+
+
+            sy =
+              e.clientY;
+
+
+            ox =
+              r.left;
+
+
+            oy =
+              r.top;
+
+
+            bar.setPointerCapture(
+              e.pointerId
+            );
+          }
+        );
+
+
+        bar.addEventListener(
+          'pointermove',
+          e => {
+
+            if(!drag){
+              return;
+            }
+
+
+            let nx =
+              ox +
+              (
+                e.clientX -
+                sx
+              );
+
+
+            let ny =
+              oy +
+              (
+                e.clientY -
+                sy
+              );
+
+
+            nx =
+              Math.max(
+                0,
+                Math.min(
+                  nx,
+                  window.innerWidth -
+                  win.offsetWidth
+                )
+              );
+
+
+            ny =
+              Math.max(
+                0,
+                Math.min(
+                  ny,
+                  window.innerHeight -
+                  55
+                )
+              );
+
+
+            win.style.left =
+              nx + 'px';
+
+
+            win.style.top =
+              ny + 'px';
+          }
+        );
+
+
+        const stop =
+          () => {
+
+            drag = false;
+          };
+
+
+        bar.addEventListener(
+          'pointerup',
+          stop
+        );
+
+
+        bar.addEventListener(
+          'pointercancel',
+          stop
+        );
+      });
+
+
+    /* ========================================
+       CLOSE ALL
+    ======================================== */
+
+    document
+      .getElementById(
+        'homeBtn'
+      )
+      .addEventListener(
+        'click',
+        () => {
+
+          const btn =
+            document.getElementById(
+              'homeBtn'
+            );
+
+
+          const bar =
+            document.querySelector(
+              '.taskbar'
+            );
+
+
+          const openWindows =
+            [
+              ...document
+                .querySelectorAll(
+                  '.window.open'
+                )
+            ];
+
+
+          if(
+            !openWindows.length
+          ){
+
+            btn.classList.remove(
+              'closing-all'
+            );
+
+
+            void btn.offsetWidth;
+
+
+            btn.classList.add(
+              'closing-all'
+            );
+
+
+            setTimeout(
+              () =>
+                btn.classList.remove(
+                  'closing-all'
+                ),
+              380
+            );
+
+
+            return;
+          }
+
+
+          btn.classList.add(
+            'closing-all'
+          );
+
+
+          bar.classList.add(
+            'closing-all'
+          );
+
+
+          openWindows.forEach(
+            (w,i) => {
+
+              w.style.setProperty(
+                '--close-delay',
+                `${i * 45}ms`
+              );
+
+
+              w.classList.add(
+                'closing'
+              );
+            }
+          );
+
+
+          const total =
+            330 +
+            Math.max(
+              0,
+              openWindows.length - 1
+            ) *
+            45;
+
+
+          setTimeout(
+            () => {
+
+              openWindows.forEach(
+                w => {
+
+                  w.classList.remove(
+                    'open',
+                    'active',
+                    'closing'
+                  );
+
+
+                  w.style.removeProperty(
+                    '--close-delay'
+                  );
+                }
+              );
+
+
+              btn.classList.remove(
+                'closing-all'
+              );
+
+
+              bar.classList.remove(
+                'closing-all'
+              );
+
+
+              syncTaskbar();
+            },
+            total
+          );
+        }
+      );
+
+
+    /* ========================================
+       TASK BAR
+    ======================================== */
+
+    const taskWindows =
+      document.getElementById(
+        'taskWindows'
+      );
+
+
+    function getWindowTitle(w){
+
+      return w
+        .querySelector(
+          '.titlebar span'
+        )
+        .textContent
+        .trim();
+    }
+
+
+    function syncTaskbar(){
+
+      taskWindows.innerHTML =
+        '';
+
+
+      const openWindows =
+        [
+          ...document
+            .querySelectorAll(
+              '.window.open'
+            )
+        ];
+
+
+      openWindows.forEach(
+        w => {
+
+          const btn =
+            document.createElement(
+              'button'
+            );
+
+
+          btn.className =
+            'task-btn' +
+            (
+              w.classList.contains(
+                'active'
+              )
+                ? ' active'
+                : ''
+            );
+
+
+          btn.textContent =
+            getWindowTitle(w);
+
+
+          btn.addEventListener(
+            'click',
+            () => {
+
+              if(
+                !w.classList.contains(
+                  'open'
+                )
+              ){
+
+                w.classList.add(
+                  'open'
+                );
+              }
+
+
+              focusWindow(w);
+            }
+          );
+
+
+          taskWindows.appendChild(
+            btn
+          );
+        }
+      );
+    }
+
+
+    window.addEventListener(
+      'DOMContentLoaded',
+      () => {
+
+        syncTaskbar();
       }
-    };
+    );
 
-    const ytApiScript = document.createElement('script');
-    ytApiScript.src = 'https://www.youtube.com/iframe_api';
-    ytApiScript.async = true;
-    ytApiScript.onerror = () => {
-      ytReady = false;
-    };
-    document.head.appendChild(ytApiScript);
 
-  </script>
+    /* ========================================
+       LINKS
+       ★ 今回の重要修正版
+    ======================================== */
 
-  <script>
-    // ===== CURSOR SPARKLE TRAIL =====
+    document
+      .querySelectorAll(
+        '.linkbtn'
+      )
+      .forEach(link => {
+
+
+        link.addEventListener(
+          'pointerdown',
+          e => {
+
+            e.stopPropagation();
+          }
+        );
+
+
+        link.addEventListener(
+          'touchstart',
+          e => {
+
+            e.stopPropagation();
+          },
+          {
+            passive:true
+          }
+        );
+
+
+        link.addEventListener(
+          'click',
+          e => {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+
+            const url =
+              link.dataset.link ||
+              link.getAttribute(
+                'href'
+              );
+
+
+            if(
+              !url ||
+              url === '#'
+            ){
+              return;
+            }
+
+
+            window.location.assign(
+              url
+            );
+          }
+        );
+      });
+
+
+    /* ========================================
+       CLOCK
+    ======================================== */
+
+    function updateClock(){
+
+      const d =
+        new Date();
+
+
+      const hh =
+        String(
+          d.getHours()
+        )
+        .padStart(
+          2,
+          '0'
+        );
+
+
+      const mm =
+        String(
+          d.getMinutes()
+        )
+        .padStart(
+          2,
+          '0'
+        );
+
+
+      document
+        .getElementById(
+          'clock'
+        )
+        .textContent =
+          hh +
+          ':' +
+          mm;
+    }
+
+
+    updateClock();
+
+
+    setInterval(
+      updateClock,
+      30000
+    );
+
+
+    /* ========================================
+       YOUTUBE PLAYER
+    ======================================== */
+
+    const tracks = [
+
+      {
+        title:
+          "夜にダンス",
+
+        videoId:
+          "3lI-lwxjdK0"
+      }
+
+    ];
+
+
+    let currentTrack = 0;
+
+    let ytPlayer = null;
+
+    let ytReady = false;
+
+    let isPlaying = false;
+
+    let fallbackPlaying = false;
+
+
+    const playBtn =
+      document.getElementById(
+        'play'
+      );
+
+
+    const fallbackHolder =
+      document.getElementById(
+        'yt-fallback-holder'
+      );
+
+
+    function updateSongTitle(){
+
+      document
+        .getElementById(
+          'song-title'
+        )
+        .textContent =
+          tracks[
+            currentTrack
+          ]
+          .title;
+    }
+
+
+    function updatePlayButton(){
+
+      playBtn.textContent =
+        isPlaying
+          ? '⏸'
+          : '▶';
+    }
+
+
+    function stopFallback(){
+
+      fallbackHolder.innerHTML =
+        '';
+
+
+      fallbackPlaying =
+        false;
+
+
+      isPlaying =
+        false;
+
+
+      updatePlayButton();
+    }
+
+
+    function startFallback(){
+
+      fallbackHolder.innerHTML =
+        '';
+
+
+      const iframe =
+        document.createElement(
+          'iframe'
+        );
+
+
+      iframe.src =
+        'https://www.youtube.com/embed/' +
+        tracks[
+          currentTrack
+        ]
+        .videoId +
+        '?autoplay=1&playsinline=1&controls=0&rel=0';
+
+
+      iframe.allow =
+        'autoplay; encrypted-media; picture-in-picture';
+
+
+      iframe.referrerPolicy =
+        'strict-origin-when-cross-origin';
+
+
+      iframe.title =
+        tracks[
+          currentTrack
+        ]
+        .title;
+
+
+      fallbackHolder.appendChild(
+        iframe
+      );
+
+
+      fallbackPlaying =
+        true;
+
+
+      isPlaying =
+        true;
+
+
+      updatePlayButton();
+    }
+
+
+    function togglePlayback(){
+
+      if(
+        ytReady &&
+        ytPlayer &&
+        typeof ytPlayer.playVideo ===
+          'function' &&
+        typeof ytPlayer.pauseVideo ===
+          'function'
+      ){
+
+        if(
+          fallbackPlaying
+        ){
+          stopFallback();
+        }
+
+
+        const state =
+          ytPlayer.getPlayerState();
+
+
+        if(
+          state ===
+          YT.PlayerState.PLAYING
+        ){
+
+          ytPlayer.pauseVideo();
+
+        }else{
+
+          ytPlayer.playVideo();
+        }
+
+
+        return;
+      }
+
+
+      if(
+        fallbackPlaying
+      ){
+
+        stopFallback();
+
+      }else{
+
+        startFallback();
+      }
+    }
+
+
+    function loadTrack(
+      index,
+      autoplay = true
+    ){
+
+      currentTrack =
+        (
+          index +
+          tracks.length
+        ) %
+        tracks.length;
+
+
+      updateSongTitle();
+
+
+      if(
+        fallbackPlaying
+      ){
+
+        stopFallback();
+
+
+        if(
+          autoplay
+        ){
+          startFallback();
+        }
+
+
+        return;
+      }
+
+
+      if(
+        ytReady &&
+        ytPlayer
+      ){
+
+        if(
+          autoplay
+        ){
+
+          ytPlayer.loadVideoById(
+            tracks[
+              currentTrack
+            ]
+            .videoId
+          );
+
+        }else{
+
+          ytPlayer.cueVideoById(
+            tracks[
+              currentTrack
+            ]
+            .videoId
+          );
+        }
+
+      }else if(
+        autoplay
+      ){
+
+        startFallback();
+      }
+    }
+
+
+    function nextTrack(){
+
+      loadTrack(
+        currentTrack + 1,
+        true
+      );
+    }
+
+
+    function prevTrack(){
+
+      loadTrack(
+        currentTrack - 1,
+        true
+      );
+    }
+
+
+    updateSongTitle();
+
+    updatePlayButton();
+
+
+    document
+      .getElementById(
+        'next'
+      )
+      .addEventListener(
+        'click',
+        nextTrack
+      );
+
+
+    document
+      .getElementById(
+        'prev'
+      )
+      .addEventListener(
+        'click',
+        prevTrack
+      );
+
+
+    playBtn.addEventListener(
+      'click',
+      togglePlayback
+    );
+
+
+    /* ========================================
+       YOUTUBE API
+    ======================================== */
+
+    window.onYouTubeIframeAPIReady =
+      function(){
+
+
+        const playerVars = {
+
+          playsinline:1,
+
+          controls:0,
+
+          rel:0
+
+        };
+
+
+        if(
+          location.protocol ===
+            'http:' ||
+          location.protocol ===
+            'https:'
+        ){
+
+          playerVars.origin =
+            location.origin;
+        }
+
+
+        try{
+
+          ytPlayer =
+            new YT.Player(
+              'yt-player',
+              {
+
+                height:'180',
+
+                width:'320',
+
+                videoId:
+                  tracks[
+                    currentTrack
+                  ]
+                  .videoId,
+
+                playerVars,
+
+                events:{
+
+                  onReady:
+                    () => {
+
+                      ytReady =
+                        true;
+
+
+                      updateSongTitle();
+                    },
+
+
+                  onStateChange:
+                    e => {
+
+
+                      if(
+                        e.data ===
+                        YT.PlayerState.PLAYING
+                      ){
+
+                        isPlaying =
+                          true;
+
+                      }else if(
+
+                        e.data ===
+                          YT.PlayerState.PAUSED ||
+
+                        e.data ===
+                          YT.PlayerState.ENDED ||
+
+                        e.data ===
+                          YT.PlayerState.CUED
+
+                      ){
+
+                        isPlaying =
+                          false;
+                      }
+
+
+                      updatePlayButton();
+
+
+                      if(
+                        e.data ===
+                        YT.PlayerState.ENDED
+                      ){
+
+                        nextTrack();
+                      }
+                    },
+
+
+                  onError:
+                    () => {
+
+                      ytReady =
+                        false;
+                    }
+                }
+              }
+            );
+
+        }catch(err){
+
+          ytReady =
+            false;
+        }
+      };
+
+
+    const ytApiScript =
+      document.createElement(
+        'script'
+      );
+
+
+    ytApiScript.src =
+      'https://www.youtube.com/iframe_api';
+
+
+    ytApiScript.async =
+      true;
+
+
+    ytApiScript.onerror =
+      () => {
+
+        ytReady =
+          false;
+      };
+
+
+    document.head.appendChild(
+      ytApiScript
+    );
+
+
+    /* ========================================
+       CURSOR SPARKLE
+    ======================================== */
+
     (() => {
+
       let last = 0;
+
       let toggle = false;
 
-      function makeSparkle(x, y, small=false){
-        const s = document.createElement('span');
-        s.className = 'sparkle' + (small ? ' small' : '');
-        s.style.left = x + 'px';
-        s.style.top = y + 'px';
-        document.body.appendChild(s);
-        setTimeout(() => s.remove(), 700);
+
+      function makeSparkle(
+        x,
+        y,
+        small = false
+      ){
+
+        const s =
+          document.createElement(
+            'span'
+          );
+
+
+        s.className =
+          'sparkle' +
+          (
+            small
+              ? ' small'
+              : ''
+          );
+
+
+        s.style.left =
+          x + 'px';
+
+
+        s.style.top =
+          y + 'px';
+
+
+        document.body.appendChild(
+          s
+        );
+
+
+        setTimeout(
+          () => s.remove(),
+          700
+        );
       }
 
-      window.addEventListener('pointermove', (e) => {
-        // マウス操作時だけ。タッチでは大量発生させない。
-        if (e.pointerType && e.pointerType !== 'mouse') return;
 
-        const now = performance.now();
-        if (now - last < 42) return;
-        last = now;
-        toggle = !toggle;
+      window.addEventListener(
+        'pointermove',
+        e => {
 
-        makeSparkle(e.clientX + (toggle ? 4 : -3), e.clientY + (toggle ? -3 : 4), toggle);
-      }, {passive:true});
+
+          if(
+            e.pointerType &&
+            e.pointerType !==
+              'mouse'
+          ){
+
+            return;
+          }
+
+
+          const now =
+            performance.now();
+
+
+          if(
+            now - last <
+            42
+          ){
+
+            return;
+          }
+
+
+          last =
+            now;
+
+
+          toggle =
+            !toggle;
+
+
+          makeSparkle(
+
+            e.clientX +
+            (
+              toggle
+                ? 4
+                : -3
+            ),
+
+            e.clientY +
+            (
+              toggle
+                ? -3
+                : 4
+            ),
+
+            toggle
+          );
+
+        },
+        {
+          passive:true
+        }
+      );
+
     })();
+
   </script>
 
 </body>
